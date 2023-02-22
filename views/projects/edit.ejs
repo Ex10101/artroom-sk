@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artroom</title>
+</head>
+<body>
+    <h1>Edit a Project</h1>
+    <form action="/projects/<%= project._id %>/update" method="POST">
+        <div>
+            <label for="projectName">Project Name</label>
+            <input type="text" name="project[name]" id="projectName" value="<%= project.name %>">
+        </div>
+        <div>
+            <label for="projectDescription">Description</label>
+            <textarea name="project[description]" id="projectDescription" cols="30" rows="10"><%= project.description %></textarea>
+        </div>
+        <div>
+            <label for="projectImage">Image Url</label>
+            <input type="text" name="project[image]" id="projectImage" value="<%= project.image %>">
+        </div>
+        <button>Submit</button>
+    </form>
+</body>
+</html>
