@@ -2,9 +2,11 @@ const express = require('express');
 const app = express();
 const dbUrl = 'mongodb://127.0.0.1:27017/artroom';
 const mongoose = require('mongoose');
+const methodOverride = require('method-override');
 const Project = require('./models/project');
 
 app.use(express.urlencoded({ extended: true }));
+app.use(methodOverride('_method'));
 
 app.set('view engine', 'ejs');
 
