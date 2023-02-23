@@ -5,7 +5,19 @@ const mongoose = require('mongoose');
 const methodOverride = require('method-override');
 const Project = require('./models/project');
 const multer = require('multer');
-const upload = multer({ dest: 'uploads/' })
+const path = require('path');
+
+
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, 'uploads/')
+  },
+  filename: function (req, file, cb) {
+    cb(null, Date.now() + path.extname(file.originalname))
+  }
+})
+
+const upload = multer({ storage: storage });
 
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
@@ -48,17 +60,16 @@ app.get('/projects/new', (req, res) => {
 
 app.post('/projects', upload.array('images'), (req, res) => {
   const project = new Project(req.body.project);
-  project.images = req.files.map(f => (f.path));
+  project.images = req.files.map(f => (f.filename));
   project.save()
-    .then(() => res.redirect('/'))
+    .then(() => res.redirect('/projects'))
     .catch(error => console.error(error));
-  console.log(project);
 });
 
 app.get('/projects/:id', async (req, res) => {
   const project = await Project.findById(req.params.id);
   console.log(project);
-  res.render('projects/show', {project});
+  res.render('projects/show', { project });
 })
 
 app.get('/projects/:id/edit', async (req, res) => {
@@ -71,6 +82,16 @@ app.post('/projects/:id/update', async (req, res) => {
   console.log(project);
   res.redirect('/projects');
 })
+
+app.post('/projects/:id/delete', async (req, res) => {
+  try {
+    const project = await Project.findByIdAndDelete(req.params.id);
+    res.redirect('/projects');
+  } catch (err) {
+    console.error(err);
+    res.redirect('/projects');
+  }
+});
 
 
 app.get('/', (req, res) => {
