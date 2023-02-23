@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1>Create a Project</h1>
-    <form action="/projects" method="POST">
+    <form action="/projects" method="POST" enctype="multipart/form-data">
         <div>
             <label for="projectName">Project Name</label>
             <input type="text" name="project[name]" id="projectName">
@@ -19,7 +19,7 @@
         </div>
         <div>
             <label for="projectImage">Image Url</label>
-            <input type="text" name="project[image]" id="projectImage">
+            <input type="file" name="images" id="projectImage" multiple>
         </div>
         <button>Submit</button>
     </form>

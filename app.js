@@ -5,21 +5,7 @@ const mongoose = require('mongoose');
 const methodOverride = require('method-override');
 const Project = require('./models/project');
 const multer = require('multer');
-const path = require('path');
-
-const storage = multer.diskStorage({
-  destination: function (req, file, cb) {
-    const projectId = req.body.name.toLowerCase().replace(/\s/g, '-');
-    const projectDir = path.join(__dirname, 'public', 'images', projectId);
-    cb(null, projectDir);
-  },
-  filename: function (req, file, cb) {
-    const filename = file.originalname.toLowerCase().replace(/\s/g, '-');
-    cb(null, filename);
-  }
-});
-
-const upload = multer({ storage: storage });
+const upload = multer({ dest: 'uploads/' })
 
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
@@ -60,14 +46,13 @@ app.get('/projects/new', (req, res) => {
   res.render('projects/new');
 })
 
-app.post('/projects', upload.array('images', 5), (req, res) => {
-  const { name, description } = req.body;
-  const projectId = name.toLowerCase().replace(/\s/g, '-');
-  const images = req.files.map(file => file.filename);
-  const project = new Project({ name, description, images });
+app.post('/projects', upload.array('images'), (req, res) => {
+  const project = new Project(req.body.project);
+  project.images = req.files.map(f => (f.path));
   project.save()
     .then(() => res.redirect('/'))
     .catch(error => console.error(error));
+  console.log(project);
 });
 
 app.get('/projects/:id', async (req, res) => {
