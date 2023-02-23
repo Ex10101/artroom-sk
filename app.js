@@ -4,6 +4,22 @@ const dbUrl = 'mongodb://127.0.0.1:27017/artroom';
 const mongoose = require('mongoose');
 const methodOverride = require('method-override');
 const Project = require('./models/project');
+const multer = require('multer');
+const path = require('path');
+
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    const projectId = req.body.name.toLowerCase().replace(/\s/g, '-');
+    const projectDir = path.join(__dirname, 'public', 'images', projectId);
+    cb(null, projectDir);
+  },
+  filename: function (req, file, cb) {
+    const filename = file.originalname.toLowerCase().replace(/\s/g, '-');
+    cb(null, filename);
+  }
+});
+
+const upload = multer({ storage: storage });
 
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
@@ -43,11 +59,16 @@ app.get('/projects', async (req, res) => {
 app.get('/projects/new', (req, res) => {
   res.render('projects/new');
 })
-app.post('/projects', async (req, res) => {
-  const project = new Project(req.body.project);
-  await project.save();
-  console.log(project);
-})
+
+app.post('/projects', upload.array('images', 5), (req, res) => {
+  const { name, description } = req.body;
+  const projectId = name.toLowerCase().replace(/\s/g, '-');
+  const images = req.files.map(file => file.filename);
+  const project = new Project({ name, description, images });
+  project.save()
+    .then(() => res.redirect('/'))
+    .catch(error => console.error(error));
+});
 
 app.get('/projects/:id', async (req, res) => {
   const project = await Project.findById(req.params.id);
