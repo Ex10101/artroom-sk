@@ -23,9 +23,11 @@
     </div>
     <div>
         <h3>Project images:</h3>
+
         <% for (let image of project.images) {%>
-            <img src="/uploads/<%= image %>" alt="Project picture">
-            <% } %>
+            <img src="/uploads/<%= image %>" alt="Project image">
+        <% } %>
+
     </div>
     <a href="/projects/<%= project._id %>/edit">Edit project</a>
     <form action="/projects/<%= project._id %>/delete" method="POST">

@@ -21,6 +21,7 @@ const upload = multer({ storage: storage });
 
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
+app.use(express.static('public'));
 
 app.set('view engine', 'ejs');
 
