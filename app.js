@@ -69,7 +69,6 @@ app.post('/projects', upload.array('images'), (req, res) => {
 
 app.get('/projects/:id', async (req, res) => {
   const project = await Project.findById(req.params.id);
-  console.log(project);
   res.render('projects/show', { project });
 })
 
@@ -80,7 +79,6 @@ app.get('/projects/:id/edit', async (req, res) => {
 app.post('/projects/:id/update', async (req, res) => {
   const project = await Project.findByIdAndUpdate(req.params.id, { ...req.body.project });
   await project.save();
-  console.log(project);
   res.redirect('/projects');
 })
 
