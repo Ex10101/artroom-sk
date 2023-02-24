@@ -92,6 +92,10 @@ app.post('/projects/:id/delete', async (req, res) => {
   }
 });
 
+app.get('/about', (req, res) => {
+  res.render('about');
+})
+
 
 app.get('/', (req, res) => {
   res.render('index');
