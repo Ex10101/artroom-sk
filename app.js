@@ -6,11 +6,12 @@ const methodOverride = require('method-override');
 const Project = require('./models/project');
 const multer = require('multer');
 const path = require('path');
+const fs = require('fs');
 
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, 'uploads/')
+    cb(null, 'public/uploads/')
   },
   filename: function (req, file, cb) {
     cb(null, Date.now() + path.extname(file.originalname))
@@ -84,7 +85,21 @@ app.post('/projects/:id/update', async (req, res) => {
 
 app.post('/projects/:id/delete', async (req, res) => {
   try {
-    const project = await Project.findByIdAndDelete(req.params.id);
+    const deletedProject = await Project.findByIdAndDelete(req.params.id);
+    if (!deletedProject) {
+      res.status(404).send('Project not found');
+      return;
+    }
+
+    deletedProject.images.forEach((filename) => {
+      const imagePath = path.join(__dirname, 'public', 'uploads', filename);
+      fs.unlink(imagePath, (err) => {
+        if (err) {
+          console.error(err);
+        }
+      });
+    });
+
     res.redirect('/projects');
   } catch (err) {
     console.error(err);
