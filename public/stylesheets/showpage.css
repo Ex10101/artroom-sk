@@ -1,0 +1,112 @@
+.projectName {
+    text-align: center;
+    margin-top: 50px;
+}
+
+#projectName {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.projectDescription {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#projectDescription {
+    font-size: 1.5rem;
+}
+
+img {
+    display: block;
+    margin: 60px auto;
+    width: 100%;
+    height: auto;
+    max-width: 1280px;
+    max-height: 720px;
+    object-fit: contain;
+}
+
+a,
+button {
+    display: inline-block;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+button[type="submit"] {
+    cursor: pointer;
+}
+
+.edit-link,
+.delete-button {
+    font-size: 1.2rem;
+    display: inline-block;
+    padding: 10px;
+    background-color: #22222e;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+.edit-link {
+    margin-right: 10px;
+}
+
+.delete-button {
+    margin-left: 10px;
+}
+
+.delete-form {
+    display: inline-block;
+}
+
+.carousel-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+footer {
+    text-align: center;
+    background-color: #22222e;
+    color: #fff;
+    padding: 20px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.content-container {
+    min-height: calc(100vh - 80px);
+    box-sizing: border-box;
+    padding: 20px;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-left: 70px;
+    margin-right: 70px;
+}
+
+@media (max-width: 720px) {
+    a.edit-link,
+    button.delete-button {
+        font-size: 60%
+    }
+}
+
+@media (max-width: 480px) {
+    #edit-delete-buttons {
+        display: none;
+    }
+}

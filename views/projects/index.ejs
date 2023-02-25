@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/stylesheets/styles.css">
+    <link rel="stylesheet" href="/stylesheets/navbar.css">
     <title>Artroom</title>
 </head>
 <body>
@@ -37,7 +37,6 @@
     <% for(let project of projects) { %>
         <div>
             <p> <%= project.name %> </p>
-            <p> <%= project.description %> </p>
             <a href="/projects/<%= project._id %>">View project</a>
             <hr>
         </div>

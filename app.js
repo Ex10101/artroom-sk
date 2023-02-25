@@ -77,6 +77,7 @@ app.get('/projects/:id/edit', async (req, res) => {
   const project = await Project.findById(req.params.id);
   res.render('projects/edit', { project })
 })
+
 app.post('/projects/:id/update', async (req, res) => {
   const project = await Project.findByIdAndUpdate(req.params.id, { ...req.body.project });
   await project.save();
