@@ -78,8 +78,9 @@ app.get('/projects/:id/edit', async (req, res) => {
   res.render('projects/edit', { project })
 })
 
-app.post('/projects/:id/update', async (req, res) => {
+app.post('/projects/:id/update', upload.array('images'), async (req, res) => {
   const project = await Project.findByIdAndUpdate(req.params.id, { ...req.body.project });
+  project.images = req.files.map(f => (f.filename));
   await project.save();
   res.redirect('/projects');
 })

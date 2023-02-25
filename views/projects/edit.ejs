@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1>Edit a Project</h1>
-    <form action="/projects/<%= project._id %>/update" method="POST">
+    <form action="/projects/<%= project._id %>/update" method="POST" enctype="multipart/form-data">
         <div>
             <label for="projectName">Project Name</label>
             <input type="text" name="project[name]" id="projectName" value="<%= project.name %>">
@@ -18,7 +18,7 @@
             <textarea name="project[description]" id="projectDescription" cols="30" rows="10"><%= project.description %></textarea>
         </div>
         <div>
-            <label for="projectImage">Image Url</label>
+            <label for="projectImage">Images</label>
             <input type="file" name="images" id="projectImage" value="<%= project.image %>" multiple>
         </div>
         <button>Submit</button>
