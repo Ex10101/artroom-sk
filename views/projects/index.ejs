@@ -15,7 +15,7 @@
 
 <body>
     <header>
-        <div id="logo">Artroom</div>
+        <a href="/"><div id="logo">Artroom</div></a>
         <div id="hamburger">
             <div class="line"></div>
             <div class="line"></div>
@@ -35,7 +35,6 @@
             </ul>
         </nav>
     </header>
-    <a href="/projects/new">Create a new project</a>
     <div class="grid">
         <% for (let project of projects) { %>
             <a href="/projects/<%=project._id%>">
@@ -55,6 +54,9 @@
             </a>
             <% } %>
     </div>
+    <footer>
+        <p>Copyright © 2023 Artroom.
+    </footer>
     <script src="/scripts/navbar.js"></script>
 </body>
 
