@@ -1,0 +1,62 @@
+@keyframes showBanner {
+    0% {
+        opacity: 0%;
+        transform: translateY(-60%);
+    }
+    100% {
+        opacity: 100%;
+        transform: translateY(0%);
+    }
+}
+
+#welcome-banner {
+    display: flex;
+    border-bottom: 2px solid black;
+    color: white;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 700px;
+    background-image: url("/staticImages/jason-wong-qn1aw4FOM9g-unsplash.jpg");
+    background-size: cover;
+}
+#welcome-banner h1 {
+    animation: 1s ease-out 0s 1 showBanner;
+
+    text-align: center;
+    text-shadow: 0px 1px 7px #000000;
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+#welcome-banner p {
+    animation: 1s ease-out 0s 1 showBanner;
+    text-align: center;
+    text-shadow: 0px 1px 7px #000000;
+    font-size: 20px;
+}
+
+#gen-banner {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    height: 600px;
+}
+#gen-banner img {
+    width: 500px;
+    height: 500px;
+}
+#g-banner-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 550px;
+    height: 400px;
+}
+#g-banner-text h1 {
+    font-size: 50px;
+}
+#g-banner-text p {
+    font-size: 15px;
+}
