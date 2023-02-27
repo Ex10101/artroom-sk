@@ -33,6 +33,7 @@ img.project-image {
     margin-top: 0;
     transition: .2s linear;
     animation: fadeIn 1s ease-in-out;
+    min-width: 240px;
 }
 
 img.project-image:hover {
