@@ -72,3 +72,8 @@ footer {
     }
 }
 
+@media screen and (max-width: 1869px) {
+    .img-gallery {
+        justify-content: center;
+    }
+}
