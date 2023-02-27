@@ -1,0 +1,73 @@
+h1 {
+    text-align: center;
+    margin: 2rem;
+    font-size: 3rem;
+    width: 50%;
+}
+
+p.about-artroom {
+    text-align: left;
+    font-size: 1rem;
+    width: 50%;
+    margin-bottom: 5rem;
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.img-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 1rem;
+    margin-top: 0.2rem;
+}
+
+img.project-image {
+    object-fit: cover;
+    width: 13%;
+    margin: 0.7rem;
+    margin-top: 0;
+    transition: .2s linear;
+    animation: fadeIn 1s ease-in-out;
+}
+
+img.project-image:hover {
+    cursor: zoom-in;
+    transform: scale(1.2, 1.2);
+}
+
+footer {
+    height: 7rem;
+}
+
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lightbox img {
+    width: 80%;
+    object-fit: contain;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+

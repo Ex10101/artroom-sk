@@ -109,8 +109,9 @@ app.post('/projects/:id/delete', async (req, res) => {
   }
 });
 
-app.get('/about', (req, res) => {
-  res.render('about');
+app.get('/about', async (req, res) => {
+  const projects = await Project.find({});
+  res.render('about', { projects });
 })
 
 
