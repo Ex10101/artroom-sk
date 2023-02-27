@@ -23,13 +23,3 @@ function hideLightbox(event) {
         event.target.remove();
     }
 }
-
-
-
-// const images = document.querySelectorAll('.project-image');
-
-// images.forEach(image => {
-//   image.addEventListener('load', () => {
-//     image.classList.add('loaded');
-//   });
-// });
