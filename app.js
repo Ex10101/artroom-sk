@@ -26,9 +26,6 @@ app.use(express.static('public'));
 
 app.set('view engine', 'ejs');
 
-app.get('/', (req, res) => {
-  res.render('index');
-});
 
 // Connection
 mongoose.connect(dbUrl)
@@ -48,6 +45,10 @@ app.use(express.urlencoded({ extended: true }));
 app.set('view engine', 'ejs');
 
 
+app.get('/', async(req, res) => {
+  const projects = await Project.find({});
+  res.render('index', { projects });
+});
 
 // Project CRUD
 app.get('/projects', async (req, res) => {
@@ -113,11 +114,6 @@ app.get('/about', async (req, res) => {
   const projects = await Project.find({});
   res.render('about', { projects });
 })
-
-
-app.get('/', (req, res) => {
-  res.render('index');
-});
 
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
