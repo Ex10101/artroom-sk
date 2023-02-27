@@ -2,100 +2,106 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/stylesheets/footer.css">
-    <link rel="stylesheet" href="/stylesheets/navbar.css">
-    <link rel="stylesheet" href="/stylesheets/about.css">
-    <title>About</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/stylesheets/footer.css">
+  <link rel="stylesheet" href="/stylesheets/navbar.css">
+  <link rel="stylesheet" href="/stylesheets/about.css">
+  <title>About</title>
 </head>
 
 <body>
-    <header>
-        <a href="/">
-            <div id="logo">Artroom</div>
-        </a>
-        <div id="hamburger">
-            <div class="line"></div>
-            <div class="line"></div>
-            <div class="line"></div>
-        </div>
-        <nav id="navbar">
-            <ul>
-                <li>
-                    <a href="/" class="navbar-link">Home</a>
-                </li>
-                <li>
-                    <a href="/projects" class="navbar-link">Projects</a>
-                </li>
-                <li>
-                    <a href="/about" class="navbar-link active">About</a>
-                </li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <h1>About</h1>
-
-        <p class="about-artroom">ARTROOM is a leading interior design studio that specializes in creating elegant and
-            functional living
-            spaces.
-            Our team of talented designers has a passion for art and a deep understanding of the latest trends in
-            interior
-            design, enabling us to deliver exceptional results that exceed our clients' expectations. <br><br>
-
-            At ARTROOM, we understand that your home is your sanctuary. Our mission is to create a space that reflects
-            your
-            unique style, personality, and needs. We believe that every client is unique, and we work closely with them
-            to
-            understand their requirements and preferences to create a customized design plan that suits their lifestyle
-            and
-            budget. <br><br>
-
-            We offer a wide range of interior design services, including space planning, color selection, lighting
-            design,
-            furniture selection, window treatments, and accessories. Whether you're looking for a complete home makeover
-            or
-            just need help with one room, our designers will work with you to create a space that is both beautiful and
-            functional. <br><br>
-
-            At ARTROOM, we use only the finest quality materials and work with skilled craftsmen to ensure that every
-            detail
-            is perfect. Our designers stay up-to-date with the latest trends in interior design to bring you the most
-            innovative and stylish solutions for your home. <br><br>
-
-            We believe that good design doesn't have to be expensive, and we work hard to offer our clients affordable
-            solutions without compromising on quality. We are committed to delivering exceptional customer service and
-            creating a seamless and stress-free design experience for our clients. <br><br>
-
-            If you're looking for an interior design studio that can transform your home into a stunning work of art,
-            look
-            no further than ARTROOM. Contact us today to schedule a consultation and let us bring your dream home to
-            life!</p>
-
-    </main>
-
-
-
-    <div class="img-gallery">
-        <% projects.forEach((project) => { %>
-            <% for (let i=0; i < Math.min(project.images.length, 7); i++) { %>
-                <img class="project-image" src="/uploads/<%= project.images[i] %>" alt="Project picture">
-                <% } %>
-                    <% }) %>
+  <header>
+    <a href="/">
+      <div id="logo">Artroom</div>
+    </a>
+    <div id="hamburger">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
     </div>
+    <nav id="navbar">
+      <ul>
+        <li>
+          <a href="/" class="navbar-link">Home</a>
+        </li>
+        <li>
+          <a href="/projects" class="navbar-link">Projects</a>
+        </li>
+        <li>
+          <a href="/about" class="navbar-link active">About</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <h1>About</h1>
+
+    <p class="about-artroom">ARTROOM is a leading interior design studio that specializes in creating elegant and
+      functional living
+      spaces.
+      Our team of talented designers has a passion for art and a deep understanding of the latest trends in
+      interior
+      design, enabling us to deliver exceptional results that exceed our clients' expectations. <br><br>
+
+      At ARTROOM, we understand that your home is your sanctuary. Our mission is to create a space that reflects
+      your
+      unique style, personality, and needs. We believe that every client is unique, and we work closely with them
+      to
+      understand their requirements and preferences to create a customized design plan that suits their lifestyle
+      and
+      budget. <br><br>
+
+      We offer a wide range of interior design services, including space planning, color selection, lighting
+      design,
+      furniture selection, window treatments, and accessories. Whether you're looking for a complete home makeover
+      or
+      just need help with one room, our designers will work with you to create a space that is both beautiful and
+      functional. <br><br>
+
+      At ARTROOM, we use only the finest quality materials and work with skilled craftsmen to ensure that every
+      detail
+      is perfect. Our designers stay up-to-date with the latest trends in interior design to bring you the most
+      innovative and stylish solutions for your home. <br><br>
+
+      We believe that good design doesn't have to be expensive, and we work hard to offer our clients affordable
+      solutions without compromising on quality. We are committed to delivering exceptional customer service and
+      creating a seamless and stress-free design experience for our clients. <br><br>
+
+      If you're looking for an interior design studio that can transform your home into a stunning work of art,
+      look
+      no further than ARTROOM. Contact us today to schedule a consultation and let us bring your dream home to
+      life!</p>
+
+  </main>
 
 
-    <footer>
-        <p>Copyright © 2023 Artroom.
-    </footer>
+
+  <div class="img-gallery">
+    <% const projectImages=projects.reduce((acc, project)=> acc.concat(project.images), []); %>
+    <% const randomImages=shuffle(projectImages).slice(0, 7); %>
+
+    <% randomImages.forEach((image)=> { %>
+    <img class="project-image" src="/uploads/<%= image %>" alt="Project picture">
+    <% }) %>
+
+    <% function shuffle(array) { let currentIndex=array.length, temporaryValue, randomIndex; while
+                            (0 !==currentIndex) { randomIndex=Math.floor(Math.random() * currentIndex); currentIndex--;
+                            temporaryValue=array[currentIndex]; array[currentIndex]=array[randomIndex];
+                            array[randomIndex]=temporaryValue; } return array; } %>
+  </div>
 
 
-    <script src="/scripts/navbar.js"></script>
-    <script src="/scripts/gallery.js"></script>
+  <footer>
+    <p>Copyright © 2023 Artroom.
+  </footer>
+
+
+  <script src="/scripts/navbar.js"></script>
+  <script src="/scripts/gallery.js"></script>
 </body>
 
 </html>
