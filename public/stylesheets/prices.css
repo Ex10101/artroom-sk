@@ -33,6 +33,7 @@ img {
     padding: 20px;
     text-align: center;
     position: relative;
+    cursor: pointer;
 }
 
 .price h2 {
@@ -40,6 +41,7 @@ img {
     font-weight: 700;
     margin-bottom: 10px;
     margin-top: 20px;
+    transition: .3s;
 }
 
 .price p {
@@ -47,6 +49,7 @@ img {
     font-weight: 500;
     color: #777;
     margin-bottom: 20px;
+    transition: .3s;
 }
 
 .price ul {
@@ -58,6 +61,7 @@ img {
     margin: 10px 0;
     font-size: 16px;
     color: #444;
+    transition: .3s;
 }
 
 .price button {
@@ -97,11 +101,19 @@ img {
 }
 
 .price:hover:before {
-    transform: scale(1.0);
+    transform: scale(1.001);
 }
 
 .price:hover img {
     transform: scale(1.02);
+}
+
+.price:hover h2 {
+    font-size: 30px;
+}
+
+.price:hover button {
+    width: 70%;
 }
 
 @media only screen and (max-width: 768px) {
@@ -111,5 +123,8 @@ img {
     .prices {
         flex-direction: column;
         align-items: center;
+    }
+    .price:hover button {
+        width: 50%;
     }
 }
