@@ -2,62 +2,67 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/stylesheets/navbar.css">
-    <link rel="stylesheet" href="../../stylesheets/indexProjects.css">
-    <title>Artroom</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/stylesheets/navbar.css">
+  <link rel="stylesheet" href="../../stylesheets/indexProjects.css">
+  <title>Artroom</title>
 </head>
 
 <body>
-    <header>
-        <a href="/"><div id="logo">Artroom</div></a>
-        <div id="hamburger">
-            <div class="line"></div>
-            <div class="line"></div>
-            <div class="line"></div>
-        </div>
-        <nav id="navbar">
-            <ul>
-                <li>
-                    <a href="/" class="navbar-link">Home</a>
-                </li>
-                <li>
-                    <a href="/projects" class="navbar-link active">Projects</a>
-                </li>
-                <li>
-                    <a href="/about" class="navbar-link">About</a>
-                </li>
-            </ul>
-        </nav>
-    </header>
-    <div class="grid">
-        <% for (let project of projects) { %>
-            <a href="/projects/<%=project._id%>">
-                <div class="grid-item">
-                    <div class="card">
-                        <img class="card-img" src="/uploads/<%=project.images[0]%>" alt="">
-                        <div class="card-content">
-                            <h2 class="card-header">
-                                <%=project.name%>
-                            </h2>
-                            <p class="card-text">
-                                <%=project.description%>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </a>
-            <% } %>
+  <header>
+    <a href="/">
+      <div id="logo">Artroom</div>
+    </a>
+    <div id="hamburger">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
     </div>
-    <footer>
-        <p>Copyright © 2023 Artroom.
-    </footer>
-    <script src="/scripts/navbar.js"></script>
+    <nav id="navbar">
+      <ul>
+        <li>
+          <a href="/" class="navbar-link">Home</a>
+        </li>
+        <li>
+          <a href="/projects" class="navbar-link active">Projects</a>
+        </li>
+        <li>
+          <a href="/about" class="navbar-link">About</a>
+        </li>
+        <li>
+          <a href="/prices" class="navbar-link">Prices</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <div class="grid">
+    <% for (let project of projects) { %>
+    <a href="/projects/<%=project._id%>">
+      <div class="grid-item">
+        <div class="card">
+          <img class="card-img" src="/uploads/<%=project.images[0]%>" alt="">
+          <div class="card-content">
+            <h2 class="card-header">
+              <%=project.name%>
+            </h2>
+            <p class="card-text">
+              <%=project.description%>
+            </p>
+          </div>
+        </div>
+      </div>
+    </a>
+    <% } %>
+  </div>
+  <footer>
+    <p>Copyright © 2023 Artroom.
+  </footer>
+  <script src="/scripts/navbar.js"></script>
 </body>
 
 </html>

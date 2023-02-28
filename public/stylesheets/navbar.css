@@ -54,7 +54,7 @@ header {
     background-color: white;
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 760px) {
     #hamburger {
         display: block;
         cursor: pointer;

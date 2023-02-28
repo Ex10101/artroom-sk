@@ -42,7 +42,8 @@ img.project-image:hover {
 }
 
 footer {
-    height: 7rem;
+    height: auto;
+    position: fixed;
 }
 
 .lightbox {
@@ -60,6 +61,7 @@ footer {
 .lightbox img {
     width: 80%;
     object-fit: contain;
+    margin-bottom: 10px;
 }
 
 @keyframes fadeIn {

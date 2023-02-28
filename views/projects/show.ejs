@@ -2,90 +2,92 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/stylesheets/navbar.css">
-    <link rel="stylesheet" href="/stylesheets/showpage.css">
-    <link rel="stylesheet" type="text/css" href="../../slick/slick.css" />
-    <link rel="stylesheet" type="text/css" href="../../slick/slick-theme.css" />
-    <title>
-        <%= project.name %>
-    </title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/stylesheets/navbar.css">
+  <link rel="stylesheet" href="/stylesheets/showpage.css">
+  <link rel="stylesheet" type="text/css" href="../../slick/slick.css" />
+  <link rel="stylesheet" type="text/css" href="../../slick/slick-theme.css" />
+  <title>
+    <%= project.name %>
+  </title>
 </head>
 
 <body>
-    <header>
-        <a href="/"><div id="logo">Artroom</div></a>
-        <div id="hamburger">
-            <div class="line"></div>
-            <div class="line"></div>
-            <div class="line"></div>
-        </div>
-        <nav id="navbar">
-            <ul>
-                <li>
-                    <a href="/" class="navbar-link">Home</a>
-                </li>
-                <li>
-                    <a href="/projects" class="navbar-link active">Projects</a>
-                </li>
-                <li>
-                    <a href="/about" class="navbar-link">About</a>
-                </li>
-            </ul>
-        </nav>
-    </header>
+  <header>
+    <a href="/">
+      <div id="logo">Artroom</div>
+    </a>
+    <div id="hamburger">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+    </div>
+    <nav id="navbar">
+      <ul>
+        <li>
+          <a href="/" class="navbar-link">Home</a>
+        </li>
+        <li>
+          <a href="/projects" class="navbar-link active">Projects</a>
+        </li>
+        <li>
+          <a href="/about" class="navbar-link">About</a>
+        </li>
+        <li>
+          <a href="/prices" class="navbar-link">Prices</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
 
-    <div class="content-container">
-        <div class="projectName">
-            <span id="projectName">
-                <%= project.name %>
-            </span>
-        </div>
-
-        <div class="projectDescription">
-            <span id="projectDescription">
-                <%= project.description %>
-            </span>
-        </div>
-
-        <div class="carousel-container">
-            <div class="carousel">
-                <% for (let image of project.images) {%>
-                    <div><img src="/uploads/<%= image %>" alt="Project image"></div>
-                    <% } %>
-            </div>
-        </div>
+  <div class="content-container">
+    <div class="projectName">
+      <span id="projectName">
+        <%= project.name %>
+      </span>
     </div>
 
-    <a href="/projects/<%= project._id %>/edit" class="edit-link">Edit project</a>
-    <form action="/projects/<%= project._id %>/delete" method="POST" class="delete-form">
-        <button type="submit" class="delete-button">Delete Project</button>
-    </form>
+    <div class="projectDescription">
+      <span id="projectDescription">
+        <%= project.description %>
+      </span>
+    </div>
+
+    <div class="carousel-container">
+      <div class="carousel">
+        <% for (let image of project.images) {%>
+        <div><img src="/uploads/<%= image %>" alt="Project image"></div>
+        <% } %>
+      </div>
+    </div>
+  </div>
+
+  <a href="/projects/<%= project._id %>/edit" class="edit-link">Edit project</a>
+  <form action="/projects/<%= project._id %>/delete" method="POST" class="delete-form">
+    <button type="submit" class="delete-button">Delete Project</button>
+  </form>
 
 
 
 
-    <footer>
-        <p>Copyright © 2023 Artroom.
-    </footer>
+  <footer>
+    <p>Copyright © 2023 Artroom.
+  </footer>
 
 
 
 
 
-
-
-
-    <script src="/scripts/navbar.js"></script>
-    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-    <script type="text/javascript" src="../../slick/slick.min.js"></script>
-    <script src="../../scripts/slickscript.js"></script>
+  <script src="/scripts/navbar.js"></script>
+  <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+  <script type="text/javascript" src="../../slick/slick.min.js"></script>
+  <script src="../../scripts/slickscript.js"></script>
 </body>
 
 </html>

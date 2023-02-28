@@ -56,6 +56,9 @@ app.get('/projects', async (req, res) => {
   res.render('projects/index', { projects });
 })
 
+app.get('/prices', (req, res) => {
+  res.render('prices');
+});
 
 app.get('/projects/new', (req, res) => {
   res.render('projects/new');
