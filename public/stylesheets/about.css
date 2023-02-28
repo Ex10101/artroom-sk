@@ -34,6 +34,7 @@ img.project-image {
     transition: .2s linear;
     animation: fadeIn 1s ease-in-out;
     min-width: 240px;
+    max-height: 172px;
 }
 
 img.project-image:hover {
@@ -43,7 +44,7 @@ img.project-image:hover {
 
 footer {
     height: auto;
-    position: fixed;
+    position: relative;
 }
 
 .lightbox {
