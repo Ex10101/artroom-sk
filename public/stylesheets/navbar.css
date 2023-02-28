@@ -19,6 +19,7 @@ header {
     align-items: center;
     justify-content: space-between;
     padding: 0 60px;
+    transition: background-color 0.5s ease;
 }
 
 #logo {

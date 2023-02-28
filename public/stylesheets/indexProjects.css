@@ -11,9 +11,19 @@ body {
     background-color: white;
 }
 
+header {
+    position: fixed;
+    z-index: 2;
+}
+
+.navhead {
+    height: 50px;
+    margin-bottom: 20px;
+}
+
 .grid {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     flex-wrap: wrap;
 }
 
@@ -74,7 +84,8 @@ body {
 }
 
 footer {
-    text-align: center;
+    /* maybe we will want the text-align thing, we'll see */
+    /* text-align: center; */
     background-color: #22222e;
     color: #fff;
     padding: 20px;

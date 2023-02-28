@@ -1,13 +1,69 @@
 footer {
+    text-align: center; /* we might get rid of this line in the future */
+    background-color: #22222e;
+    color: #808080;
+    padding: 20px 0;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    transition: .3s;
+}
+
+.contact-info, .working-hours {
+    flex-basis: 50%;
+}
+
+.contact-info h5, .working-hours h5 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+} 
+
+.contact-info p, .working-hours p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 3px;
+}
+
+.contact-info a {
+    color: #fff;
+}
+
+.copyright {
+    background-color: rgb(55, 55, 55);
     display: flex;
     justify-content: center;
-    align-items: center;
+}
+
+.copyright p {
+    margin: 10px;
+    font-size: 10px;
     text-align: center;
-    background-color: #22222e;
-    color: #fff;
-    padding: 20px;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-    height: 4rem;
+}
+
+.working-hours p:last-child {
+    margin-bottom: 0;
+}
+
+@media (max-width: 1280px) {
+    .footer {
+        max-width: 700px;
+    }
+}
+
+@media (max-width: 767px) {
+    .footer {
+        flex-direction: column;
+        align-items: center;
+        height: 350px;
+    }
+
+    .contact-info, .working-hours {
+        flex-basis: 100%;
+        margin-bottom: 0;
+    }
 }

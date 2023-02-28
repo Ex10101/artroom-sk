@@ -9,6 +9,9 @@
     }
 }
 
+header {
+    position: fixed;
+}
 
 #welcome-banner {
     display: flex;

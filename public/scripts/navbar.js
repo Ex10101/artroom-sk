@@ -1,7 +1,7 @@
-hamburger = document.querySelector("#hamburger")
-navbar = document.querySelector("#navbar")
-navbarLinks = document.querySelector(".navbar-link")
+const hamburger = document.querySelector("#hamburger")
+const navbario = document.querySelector("#navbar")
+const navbarLinks = document.querySelector(".navbar-link")
 
 hamburger.onclick = function() {
-    navbar.classList.toggle("active");
+    navbario.classList.toggle("active");
 }
