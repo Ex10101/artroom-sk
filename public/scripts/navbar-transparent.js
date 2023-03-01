@@ -6,7 +6,9 @@ window.addEventListener('scroll', function () {
 
     if (scrolled >= threshold) {
         navbar.style.backgroundColor = '#22222e7a';
+        // cюда пойдут стили, когда пользователь прокрутил страницу
     } else {
         navbar.style.backgroundColor = '#22222e';
+        // сюда пойдут стили, когда пользователь на начале страницы
     }
 });
