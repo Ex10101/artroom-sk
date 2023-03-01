@@ -36,7 +36,7 @@
           <a href="/about" class="navbar-link">About</a>
         </li>
         <li>
-          <a href="/prices" class="navbar-link">Prices</a>
+          <a href="/prices" class="navbar-link">Pricing</a>
         </li>
       </ul>
     </nav>
@@ -49,8 +49,8 @@
   </div>
 
   <div id="gen-banner">
-    <img src="/staticImages/Furniture-1-1.jpg" alt="Furniture image">
-    <div id="g-banner-text">
+    <img src="/staticImages/Furniture-1-1.jpg" alt="Furniture image" class="hidden">
+    <div id="g-banner-text" class="hidden">
       <h1>Interior, exterior design and 3D visualization in EU</h1>
       <p>ARTROOM is a team of professionals. We design flats, cottages, restaurants, bars, offices, shops, and other residential and public premises.</p>
       <p>We also develop individual projects for low-rise private residential buildings and perform architectural 3D visualisation.</p>
@@ -60,50 +60,50 @@
 
   <h1 id="advantages-header">Our Advantages</h1>
   <div id="advantages-grid">
-    <div class="advantages-item">
-      <img src="/staticImages/access-svgrepo-com.svg" alt="" width="60px" height="60px">
+    <div class="advantages-item hidden">
+      <img src="/staticImages/access-svgrepo-com.svg" alt="" width="45px" height="45px">
       <h2>A PERSONALISED APPROACH</h2>
       <p>Individual approach to each customer, rather than imposing their perceptions</p>
     </div>
-    <div class="advantages-item">
-      <img src="/staticImages/building-plan.svg" alt="" width="60px" height="60px">
+    <div class="advantages-item hidden">
+      <img src="/staticImages/building-plan.svg" alt="" width="45px" height="45px">
       <h2>FULL SERVICE PACKAGE</h2>
       <p>Full service package from drawings to authoring</p>
     </div>
-    <div class="advantages-item">
-      <img src="/staticImages/building-tool-svgrepo-com.svg" alt="" width="60px" height="60px">
+    <div class="advantages-item hidden">
+      <img src="/staticImages/building-tool-svgrepo-com.svg" alt="" width="45px" height="45px">
       <h2>3D VISUALISATION</h2>
       <p>High-quality and realistic 3D visualisation</p>
     </div>
-    <div class="advantages-item">
-      <img src="/staticImages/building.svg" alt="" width="60px" height="60px">
+    <div class="advantages-item hidden">
+      <img src="/staticImages/building.svg" alt="" width="45px" height="45px">
       <h2>FROM THE ROOM TO THE WHOLE SITE</h2>
       <p>The possibility of ordering the interior design of the entire property or of an individual room</p>
     </div>
-    <div class="advantages-item">
-      <img src="/staticImages/construction-worker-svgrepo-com.svg" alt="" width="60px" height="60px">
+    <div class="advantages-item hidden">
+      <img src="/staticImages/construction-worker-svgrepo-com.svg" alt="" width="45px" height="45px">
       <h2>CONSTRUCTION TEAMS</h2>
       <p>Possibility of realising the project with our construction crews</p>
     </div>
-    <div class="advantages-item">
-      <img src="/staticImages/science-svgrepo-com.svg" alt="" width="60px" height="60px">
+    <div class="advantages-item hidden">
+      <img src="/staticImages/science-svgrepo-com.svg" alt="" width="45px" height="45px">
       <h2>TECHNOLOGY</h2>
       <p>Use of innovative engineering technology and the latest construction materials in the design project</p>
     </div>
-    <div class="advantages-item">
-      <img src="/staticImages/quality-svgrepo-com.svg" alt="" width="60px" height="60px">
+    <div class="advantages-item hidden">
+      <img src="/staticImages/quality-svgrepo-com.svg" alt="" width="45px" height="45px">
       <h2>QUALITY</h2>
       <p>The quality of our work is confirmed by the recommendations of our customers</p>
     </div>
-    <div class="advantages-item">
-      <img src="/staticImages/question-circle-svgrepo-com.svg" alt="" width="60px" height="60px">
+    <div class="advantages-item hidden">
+      <img src="/staticImages/question-circle-svgrepo-com.svg" alt="" width="45px" height="45px">
       <h2>FREE CONSULTATIONS</h2>
       <p>Free advice from highly qualified professionals when buying a flat, plot or house, or when carrying out a design project.</p>
     </div>
   </div>
 
   <h1 id="works-header">SOME OF OUR WORKS</h1>
-  <div id="works-showbanner">
+  <div id="works-showbanner" class="hidden slow">
     <% const project1 = projects[0] %>
     <% const project2 = projects[1] %>
     <% const project3 = projects[2] %>
@@ -152,6 +152,7 @@
   
   <script src="/scripts/navbar-transparent.js"></script>
   <script src="/scripts/navbar.js"></script>
+  <script src="/scripts/animations.js"></script>
 
 </body>
 

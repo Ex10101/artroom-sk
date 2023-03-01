@@ -79,6 +79,7 @@ header {
         background: #22222e;
         transition: 0.2s;
         overflow: hidden;
+        z-index: 100;
     }
 
     #navbar.active {

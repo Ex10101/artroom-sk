@@ -43,8 +43,8 @@ header {
 
 #gen-banner {
     display: flex;
-    justify-content: space-evenly;
     align-items: center;
+    justify-content: space-evenly;
     border-bottom: 2px solid black;
     width: 100%;
     padding: 100px 0 100px 0;
@@ -55,24 +55,23 @@ header {
 }
 #g-banner-text {
     display: flex;
-    flex-shrink: 1;
     flex-direction: column;
-    justify-content: space-evenly;
-    width: 50%;
-    height: 400px;
+    width: 35%;
 }
 #g-banner-text h1 {
-    font-size: 50px;
+    margin-bottom: 40px;
+    font-size: 35px;
 }
 #g-banner-text p {
     font-size: 15px;
+    margin-bottom: 20px;
 }
 
 
 #advantages-header {
     text-align: center;
     margin-top: 100px;
-    font-size: 50px;
+    font-size: 40px;
 }
 #advantages-grid {
     display: flex;
@@ -86,21 +85,24 @@ header {
     text-align: center;
     flex-direction: column;
     align-items: center;
-    width: 400px;
-    margin: 40px 20px;
+    width: 300px;
+    margin: 50px 50px;
 }
 .advantages-item img {
     margin-bottom: 60px;
 }
 .advantages-item h2 {
-    font-size: 21px;
+    font-size: 19px;
     margin-bottom: 20px;
+}
+.advantages-item p {
+    font-size: 15px;
 }
 
 #works-header {
     text-align: center;
     margin-top: 100px;
-    font-size: 50px;
+    font-size: 40px;
 }
 #works-showbanner {
     padding: 100px 0 100px 0;
@@ -110,10 +112,11 @@ header {
 }
 .works-project {
     position: relative;
+    margin: 0px 20px;
 }
 .works-project img{
     object-fit: cover;
-    width: 33vw;
+    width: 30vw;
     height: 600px;
 }
 .works-project:hover > .works-name {
@@ -129,7 +132,7 @@ header {
     background-color: #22222e;
     position: absolute;
     bottom: 3px;
-    width: 33vw;
+    width: 30vw;
     height: 80px;
     opacity: 0;
     transition: 0.5s;
@@ -140,11 +143,32 @@ header {
 }
 
 
+.hidden {
+    opacity: 0;
+    transform: translateX(-30%);
+    transition: all 1.3s;
+}
+.shown {
+    opacity: 100%;
+    transform: translateX(0%);
+}
 
 @media (max-width: 1100px) {
     #gen-banner img{
         width: 370px;
         height: 370px;
+    }
+    #works-showbanner {
+        flex-direction: column;
+    }
+    .works-name {
+        width: 90vw;
+    }
+    .works-project img {
+        width: 90vw;
+    }
+    .works-project {
+        margin-bottom: 30px;
     }
 }
 @media (max-width: 950px) {
@@ -153,15 +177,25 @@ header {
         height: 420px;
     }
     #gen-banner {
-        height: 1000px;
+        height: 70rem;
         flex-direction: column;
+        justify-content: space-evenly;
     }
     #g-banner-text {
-        width: 70%;
+        width: 80%;
     }
 }
 @media (max-width: 700px) {
     #g-banner-text h1 {
         font-size: 30px;
+    }
+}
+@media (max-width: 650px) {
+    #gen-banner img{
+        width: 350px;
+        height: 350px;
+    }
+    #gen-banner {
+        padding: 0px 0 0px 0;
     }
 }

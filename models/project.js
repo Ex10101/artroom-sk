@@ -3,11 +3,11 @@ const mongoose = require('mongoose');
 const projectSchema = new mongoose.Schema({
   name: { type: String, required: true },
   description: { type: String, required: true },
-  type: { 
-    type: String, 
-    enum: ['Visualisation', 'Architecture', 'Design'], // Accepts only 1 option out of these 3
-    required: true 
-  },
+  // type: { 
+  //   type: String, 
+  //   enum: ['Visualisation', 'Architecture', 'Design'], // Accepts only 1 option out of these 3
+  //   required: true 
+  // },
   images: [{type: String}]
 });
 
