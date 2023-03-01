@@ -28,7 +28,7 @@ header {
 }
 
 .grid-item {
-    background-color: #22222e;
+    background-color: #ececec;
     border-radius: 0.7rem;
     overflow: hidden;
     cursor: pointer;
@@ -42,24 +42,24 @@ header {
 
 .grid-item:hover {
     transform: translateY(-0.5%);
-    background-color: #37374b;
+    background-color: rgb(166, 166, 166);
 }
 
 .card-img {
     display: block;
     width: 100%;
-    height: 20rem;
+    height: 28rem;
     object-fit: cover;
 }
 
 .card-content {
-    padding: 3rem;
+    padding: 2rem;
 }
 
 .card-header {
     font-size: 2rem;
     font-weight: 500;
-    color: white;
+    color: #444;
     margin-bottom: 1.5rem;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -81,6 +81,7 @@ header {
     -webkit-line-clamp: 4;
     line-clamp: 4;
     -webkit-box-orient: vertical;
+    display: none;
 }
 
 footer {
@@ -94,9 +95,72 @@ footer {
     width: 100%;
 }
 
+.filter-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.filter-button {
+    padding: 10px 20px;
+    margin: 0 5px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
+    background-color: #22222e;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.filter-button:hover {
+    background-color: #292933;
+}
+
+.filter-button.active {
+    background-color: #fff;
+    color: #22222e;
+    box-shadow: 0 0 0 3px rgba(34, 34, 46, 0.2);
+}
+
+.filter-button.active:hover {
+    background-color: #f5f5f5;
+}
+
+.filter-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(34, 34, 46, 0.2);
+}
+
 @media (max-width: 660px) {
     .grid-item {
-        width: 30rem;
+        width: 20rem;
+        align-items: center;
+    }
+
+    .grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card-header {
+        font-size: 1rem;
+    }
+
+    .card-text {
+        font-size: 0.7rem;
+    }
+
+    .filter-button {
+        width: 50%;
+        font-size: 12px;
+        margin-top: 10px;
+    }
+
+    .filter-buttons {
+        flex-direction: column;
+        align-items: center;
     }
 }
 

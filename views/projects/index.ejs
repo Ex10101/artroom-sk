@@ -45,25 +45,78 @@
     </header>
   </div>
 
-  <div class="grid">
-    <% for (let project of projects) { %>
-    <a href="/projects/<%=project._id%>">
-      <div class="grid-item">
-        <div class="card">
-          <img class="card-img" src="/uploads/<%=project.images[0]%>" alt="">
-          <div class="card-content">
-            <h2 class="card-header">
-              <%=project.name%>
-            </h2>
-            <p class="card-text">
-              <%=project.description%>
-            </p>
+  <div class="filter-buttons">
+    <button class="filter-button" data-type="architecture">Architecture</button>
+    <button class="filter-button" data-type="visualisation">Visualisation</button>
+    <button class="filter-button active" data-type="design">Design</button>
+  </div>
+
+  <div class="section" data-type="architecture">
+    <div class="grid">
+      <% for (let project of architectureProjects) { %>
+      <a href="/projects/<%=project._id%>">
+        <div class="grid-item">
+          <div class="card">
+            <img class="card-img" src="/uploads/<%=project.images[0]%>" alt="">
+            <div class="card-content">
+              <h2 class="card-header">
+                <%=project.name%>
+              </h2>
+              <p class="card-text">
+                <%=project.description%>
+              </p>
+            </div>
           </div>
         </div>
-      </div>
-    </a>
-    <% } %>
+      </a>
+      <% } %>
+    </div>
   </div>
+
+  <div class="section" data-type="visualisation">
+    <div class="grid">
+      <% for (let project of visualisationProjects) { %>
+      <a href="/projects/<%=project._id%>">
+        <div class="grid-item">
+          <div class="card">
+            <img class="card-img" src="/uploads/<%=project.images[0]%>" alt="">
+            <div class="card-content">
+              <h2 class="card-header">
+                <%=project.name%>
+              </h2>
+              <p class="card-text">
+                <%=project.description%>
+              </p>
+            </div>
+          </div>
+        </div>
+      </a>
+      <% } %>
+    </div>
+  </div>
+
+  <div class="section" data-type="design">
+    <div class="grid">
+      <% for (let project of designProjects) { %>
+      <a href="/projects/<%=project._id%>">
+        <div class="grid-item">
+          <div class="card">
+            <img class="card-img" src="/uploads/<%=project.images[0]%>" alt="">
+            <div class="card-content">
+              <h2 class="card-header">
+                <%=project.name%>
+              </h2>
+              <p class="card-text">
+                <%=project.description%>
+              </p>
+            </div>
+          </div>
+        </div>
+      </a>
+      <% } %>
+    </div>
+  </div>
+
 
 
   <footer>
@@ -91,6 +144,7 @@
 
   <script src="/scripts/navbar-transparent.js"></script>
   <script src="/scripts/navbar.js"></script>
+  <script src="/scripts/filterByType.js"></script>
 </body>
 
 </html>

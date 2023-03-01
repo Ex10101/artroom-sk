@@ -45,16 +45,30 @@ app.use(express.urlencoded({ extended: true }));
 app.set('view engine', 'ejs');
 
 
-app.get('/', async(req, res) => {
+app.get('/', async (req, res) => {
   const projects = await Project.find({});
   res.render('index', { projects });
 });
 
 // Project CRUD
 app.get('/projects', async (req, res) => {
-  const projects = await Project.find({});
-  res.render('projects/index', { projects });
-})
+  try {
+    const architectureProjects = await Project.find({ type: 'Architecture' });
+    const visualisationProjects = await Project.find({ type: 'Visualisation' });
+    const designProjects = await Project.find({ type: 'Design' });
+    const projects = await Project.find({});
+
+    res.render('projects', {
+      architectureProjects,
+      visualisationProjects,
+      designProjects,
+      projects
+    });
+  } catch (err) {
+    console.error(err);
+    res.status(500).send('Internal Server Error');
+  }
+});
 
 app.get('/prices', (req, res) => {
   res.render('prices');
