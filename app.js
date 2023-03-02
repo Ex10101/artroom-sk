@@ -50,7 +50,6 @@ app.get('/', async (req, res) => {
   res.render('index', { projects });
 });
 
-// Project CRUD
 app.get('/projects', async (req, res) => {
   try {
     const architectureProjects = await Project.find({ type: 'Architecture' });
@@ -70,9 +69,6 @@ app.get('/projects', async (req, res) => {
   }
 });
 
-app.get('/prices', (req, res) => {
-  res.render('prices');
-});
 
 app.get('/projects/new', (req, res) => {
   res.render('projects/new');
@@ -82,8 +78,8 @@ app.post('/projects', upload.array('images'), (req, res) => {
   const project = new Project(req.body.project);
   project.images = req.files.map(f => (f.filename));
   project.save()
-    .then(() => res.redirect('/projects'))
-    .catch(error => console.error(error));
+  .then(() => res.redirect('/projects'))
+  .catch(error => console.error(error));
 });
 
 app.get('/projects/:id', async (req, res) => {
@@ -110,7 +106,7 @@ app.post('/projects/:id/delete', async (req, res) => {
       res.status(404).send('Project not found');
       return;
     }
-
+    
     deletedProject.images.forEach((filename) => {
       const imagePath = path.join(__dirname, 'public', 'uploads', filename);
       fs.unlink(imagePath, (err) => {
@@ -119,7 +115,7 @@ app.post('/projects/:id/delete', async (req, res) => {
         }
       });
     });
-
+    
     res.redirect('/projects');
   } catch (err) {
     console.error(err);
@@ -127,9 +123,17 @@ app.post('/projects/:id/delete', async (req, res) => {
   }
 });
 
+app.get('/prices', (req, res) => {
+  res.render('prices');
+});
+
 app.get('/about', async (req, res) => {
   const projects = await Project.find({});
   res.render('about', { projects });
+})
+
+app.get('/contacts', (req, res) => {
+  res.render('contacts');
 })
 
 app.listen(port, () => {

@@ -99,13 +99,14 @@ header {
     font-size: 15px;
 }
 
+
 #works-header {
     text-align: center;
     margin-top: 100px;
     font-size: 40px;
 }
 #works-showbanner {
-    padding: 100px 0 100px 0;
+    padding: 50px 0 50px 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -142,16 +143,30 @@ header {
     color: white;
 }
 
+#contacts-link h2 {
+    text-align: center;
+    font-size: 35px;
+}
+#contacts-link {
+    margin-bottom: 50px;
+}
+#contacts-link a {
+    display: block;
+    text-align: center;
+    background-color: #22222e;
+    color: white;
+    padding: 25px;
+    width: 200px;
+    margin: 35px auto;
+    border-radius: 50px;
+    transition: 0.7s;
+}
+#contacts-link a:hover {
+    width: 250px;
+    background-color: #5c5b5b;
+}
 
-.hidden {
-    opacity: 0;
-    transform: translateX(-30%);
-    transition: all 1.3s;
-}
-.shown {
-    opacity: 100%;
-    transform: translateX(0%);
-}
+
 
 @media (max-width: 1100px) {
     #gen-banner img{
