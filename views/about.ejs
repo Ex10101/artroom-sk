@@ -81,22 +81,57 @@
 
   </main>
 
+  <div class="container">
 
+    <div class="card">
+      <div 
+        class="card-image" 
+        style="background-image: url(/staticImages/Sergey_Davidovich.jpg)">
+      </div>
 
-  <div class="img-gallery">
-    <% const projectImages=projects.reduce((acc, project)=> acc.concat(project.images), []); %>
-    <% const randomImages=shuffle(projectImages).slice(0, 7); %>
+      <div class="card-content">
+        <h3 class="card-title">Sergey Davidovich</h3>
+        <p class="card-description">Architect, designer, artist</p>
+      </div>
+    </div>
 
-    <% randomImages.forEach((image)=> { %>
-    <img class="project-image" src="/uploads/<%= image %>" alt="Project picture">
-    <% }) %>
+    <div class="card">
+      <div 
+        class="card-image" 
+        style="background-image: url(/staticImages/Raman-Manis-scaled.jpg)">
+      </div>
 
-    <% function shuffle(array) { let currentIndex=array.length, temporaryValue, randomIndex; while
-                            (0 !==currentIndex) { randomIndex=Math.floor(Math.random() * currentIndex); currentIndex--;
-                            temporaryValue=array[currentIndex]; array[currentIndex]=array[randomIndex];
-                            array[randomIndex]=temporaryValue; } return array; } %>
+      <div class="card-content">
+        <h3 class="card-title">Roman Manis</h3>
+        <p class="card-description">Architect, designer</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div 
+        class="card-image" 
+        style="background-image: url(/staticImages/valentin.jpg)">
+      </div>
+
+      <div class="card-content">
+        <h3 class="card-title">Valentin Ivashkov</h3>
+        <p class="card-description">Architect</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div 
+        class="card-image" 
+        style="background-image: url(/staticImages/Yulia-Manis-scaled.jpg)">
+      </div>
+
+      <div class="card-content">
+        <h3 class="card-title">Julia Manis</h3>
+        <p class="card-description">Designer</p>
+      </div>
+    </div>
+
   </div>
-
 
   <footer>
     <div class="footer">
@@ -121,9 +156,7 @@
       Copying of any materials by third parties without written permission is prohibited. </p>
   </div>
 
-
   <script src="/scripts/navbar.js"></script>
-  <script src="/scripts/gallery.js"></script>
 </body>
 
 </html>
