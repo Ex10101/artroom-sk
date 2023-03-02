@@ -91,3 +91,9 @@ main {
 .card:hover .card-description {
     color:#666;
 }
+
+@media (max-width: 1200px) {
+    p.about-artroom {
+        width: 80%;
+    }
+}
