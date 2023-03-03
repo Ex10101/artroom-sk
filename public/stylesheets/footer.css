@@ -1,8 +1,25 @@
 footer {
-    text-align: center; /* we might get rid of this line in the future */
+    text-align: center;
+    /* we might get rid of this line in the future */
     background-color: #22222e;
     color: #808080;
     padding: 20px 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+p {
+    font-family: 'Open Sans', sans-serif;
+}
+
+span {
+    font-family: 'Open Sans', sans-serif;
 }
 
 .footer {
@@ -13,17 +30,20 @@ footer {
     transition: .3s;
 }
 
-.contact-info, .working-hours {
+.contact-info,
+.working-hours {
     flex-basis: 50%;
 }
 
-.contact-info h5, .working-hours h5 {
+.contact-info h5,
+.working-hours h5 {
     font-size: 20px;
     font-weight: bold;
     margin-bottom: 20px;
-} 
+}
 
-.contact-info p, .working-hours p {
+.contact-info p,
+.working-hours p {
     font-size: 16px;
     line-height: 1.5;
     margin-bottom: 3px;
@@ -62,7 +82,8 @@ footer {
         height: 350px;
     }
 
-    .contact-info, .working-hours {
+    .contact-info,
+    .working-hours {
         flex-basis: 100%;
         margin-bottom: 0;
     }

@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&family=Montserrat:wght@400;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/stylesheets/navbar.css">
   <link rel="stylesheet" href="/stylesheets/showpage.css">
   <link rel="stylesheet" href="/stylesheets/footer.css">
@@ -42,6 +42,9 @@
         <li>
           <a href="/prices" class="navbar-link">Pricing</a>
         </li>
+        <li>
+          <a href="/contacts" class="navbar-link">Contacts</a>
+        </li>
       </ul>
     </nav>
   </header>
@@ -59,9 +62,9 @@
       </span>
     </div>
 
-    <div class="carousel-container">
-      <div class="carousel">
-        <% for (let image of project.images) {%>
+    <div class="not-carousel-container">
+      <div class="not-carousel">
+        <% for (let image of project.images) { %>
         <div><img src="/uploads/<%= image %>" alt="Project image"></div>
         <% } %>
       </div>

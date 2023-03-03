@@ -12,6 +12,7 @@
 .projectDescription {
     text-align: center;
     margin-top: 20px;
+    width: 50%;
 }
 
 #projectDescription {
@@ -84,6 +85,16 @@ footer {
     justify-content: space-evenly;
     margin-left: 70px;
     margin-right: 70px;
+    align-items: center;
+}
+
+@media (max-width: 1280px) {
+    #projectName {
+        font-size: 35px;
+    }
+    .projectDescription {
+        width: 75%;
+    }
 }
 
 @media (max-width: 720px) {
@@ -91,10 +102,28 @@ footer {
     button.delete-button {
         font-size: 60%
     }
+    .projectDescription {
+        width: 85%;
+    }
+    #projectName {
+        font-size: 32px;
+    }
+    #projectDescription {
+        font-size: 18px;
+    }
 }
 
 @media (max-width: 480px) {
     #edit-delete-buttons {
         display: none;
+    }
+    .projectDescription {
+        width: 85%;
+    }
+    #projectDescription {
+        font-size: 14px;
+    }
+    #projectName {
+        font-size: 30px;
     }
 }
