@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="sk">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&family=Montserrat:wght@400;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/stylesheets/navbar.css">
+  <link rel="stylesheet" href="/stylesheets/footer.css">
+  <link rel="stylesheet" href="/stylesheets/homepage.css">
+  <link rel="stylesheet" href="/stylesheets/animations.css">
+  <title>Úvodná stránka</title>
+</head>
+
+<body>
+  <header>
+    <a href="/">
+      <div id="logo">Artroom</div>
+    </a>
+    <div id="hamburger">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+    </div>
+    <nav id="navbar">
+      <ul>
+        <li>
+          <a href="/sk" class="navbar-link active">Domov</a>
+        </li>
+        <li>
+          <a href="/sk/projects" class="navbar-link">Projekty</a>
+        </li>
+        <li>
+          <a href="/sk/about" class="navbar-link">O nás</a>
+        </li>
+        <li>
+          <a href="/sk/prices" class="navbar-link">Ceny</a>
+        </li>
+        <li>
+          <a href="/sk/contacts" class="navbar-link">Kontakt</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+
+  <div id="welcome-banner">
+    <h1>Vitajte v Artroome!</h1>
+    <p>Tím skúsených dizajnérov a architektov.</p>
+  </div>
+
+  <div id="gen-banner">
+    <img src="/staticImages/Furniture-1-1.jpg" alt="Furniture image" class="hidden">
+    <div id="g-banner-text" class="hidden">
+      <h1>Interiérový, exteriérový dizajn a 3D vizualizácie v EU</h1>
+      <p>ARTROOM je tím profesionálov. Navrhujeme byty, chaty, reštaurácie, bary, kancelárie, obchody a iné obytné a verejné priestory.</p>
+      <p>Vyvíjame tiež individuálne projekty pre nízko-stavby a vykonávame architektonické 3D vizualizácie.</p>
+      <p>Máme obrovské množstvo úspešne dokončených projektov a mnoho rokov skúseností v tejto oblasti. Špecialisti v našom štúdiu pre Vás pripravia podrobnú technickú dokumentáciu najvyššej kvality, aby ste mohli plne realizovať objekt.</p>
+    </div>
+  </div>
+
+  <h1 id="advantages-header">Naše výhody</h1>
+  <div id="advantages-grid">
+    <div class="advantages-item hidden">
+      <img src="/staticImages/access-svgrepo-com.svg" alt="" width="45px" height="45px">
+      <h2>PERSONALIZOVANÝ PRÍSTUP</h2>
+      <p>Individuálny prístup ku každému zákazníkovi, namiesto nútenia vlastného názoru</p>
+    </div>
+    <div class="advantages-item hidden">
+      <img src="/staticImages/building-plan.svg" alt="" width="45px" height="45px">
+      <h2>KOMPLETNÝ SERVISNÝ BALÍK</h2>
+      <p>Kompletný servisný balík od výkresov až po autorizáciu</p>
+    </div>
+    <div class="advantages-item hidden">
+      <img src="/staticImages/building-tool-svgrepo-com.svg" alt="" width="45px" height="45px">
+      <h2>3D VIZUALIZÁCIA</h2>
+      <p>Vysokokvalitná a realistická 3D vizualizácia</p>
+    </div>
+    <div class="advantages-item hidden">
+      <img src="/staticImages/building.svg" alt="" width="45px" height="45px">
+      <h2>OD IZBY PO CELÝ POZEMOK</h2>
+      <p>Možnosť objednania interiérového dizajnu celej nehnuteľnosti alebo jednej izby</p>
+    </div>
+    <div class="advantages-item hidden">
+      <img src="/staticImages/construction-worker-svgrepo-com.svg" alt="" width="45px" height="45px">
+      <h2>STAVEBNÉ TÍMY</h2>
+      <p>Možnosť realizácie projektu s našimi stavebnými brigádami</p>
+    </div>
+    <div class="advantages-item hidden">
+      <img src="/staticImages/science-svgrepo-com.svg" alt="" width="45px" height="45px">
+      <h2>TECHNOLÓGIE</h2>
+      <p>Použitie inovatívnej inžinierskej technológie a najnovších stavebných materiálov v dizajnovej projektovej práci</p>
+    </div>
+    <div class="advantages-item hidden">
+      <img src="/staticImages/quality-svgrepo-com.svg" alt="" width="45px" height="45px">
+      <h2>KVALITA</h2>
+      <p>Kvalita našej práce je potvrdená odporúčaniami našich zákazníkov</p>
+    </div>
+    <div class="advantages-item hidden">
+      <img src="/staticImages/question-circle-svgrepo-com.svg" alt="" width="45px" height="45px">
+      <h2>BEZPLATNÉ PORADENSTVO</h2>
+      <p>Bezplatné poradenstvo od vysoko kvalifikovaných profesionálov pri kúpe bytu, pozemku alebo domu, alebo pri realizácii projektu návrhu.</p>
+    </div>
+  </div>
+
+  <h1 id="works-header">NIEKTORÉ Z NAŠICH PRÁC</h1>
+  <div id="works-showbanner" class="hidden slow">
+    <% const project1 = projects[0] %>
+    <% const project2 = projects[1] %>
+    <% const project3 = projects[2] %>
+    <div class="works-project">
+      <a href="/sk/projects/<%= project1._id %>"><img src="/uploads/<%= project1.images[0] %>" alt=""></a>
+      <div class="works-name">
+        <h3><%= project1.name %></h3>
+      </div>
+    </div>
+    <div class="works-project">
+      <a href="/sk/projects/<%= project2._id %>"><img src="/uploads/<%= project2.images[0] %>" alt=""></a>
+      <div class="works-name">
+        <h3><%= project2.name %></h3>
+      </div>
+    </div>
+    <div class="works-project">
+      <a href="/sk/projects/<%= project3._id %>"><img src="/uploads/<%= project3.images[0] %>" alt=""></a>
+      <div class="works-name">
+        <h3><%= project3.name %></h3>
+      </div>
+    </div>
+  </div>
+
+  <div id="contacts-link">
+    <h2>Pre ďalšie informácie</h2>
+    <a href="/sk/contacts">Kontaktujte nás</a>
+  </div>
+
+  <footer>
+    <div class="footer">
+      <div class="contact-info">
+        <h5>Kontaktné informácie:</h5>
+        <p class="address">Mozartova 4912/10,<br> 811 02 Bratislava - Stare Mesto</p>
+        <p class="email">Email: <a href="mailto:artroom.box@gmail.com">artroom.box@gmail.com</a></p>
+        <p class="phone-number">Telefónne číslo: +421 949 227 794</p>
+      </div>
+      <div class="working-hours">
+        <h5>Pracovné hodiny:</h5>
+        <p>Pondelok-Piatok - 10:00-18:00</p>
+        <p>Sobota-Nedeľa - nepracujeme</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="copyright">
+    <p> © ARTROOM Architektonické štúdio.
+      Všetky práva vyhradené.
+      Všetky vizuálne materiály na webovej stránke patria architektonickému štúdiu ARTROOM.
+      Kopírovanie akýchkoľvek materiálov tretími stranami bez písomného povolenia je zakázané. </p>
+  </div>
+
+  <script src="/scripts/navbar-transparent.js"></script>
+  <script src="/scripts/navbar.js"></script>
+  <script src="/scripts/animations.js"></script>
+
+</body>
+
+</html>

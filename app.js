@@ -8,8 +8,8 @@ const multer = require('multer');
 const path = require('path');
 const fs = require('fs');
 const auth = require('./middleware/auth');
-const session = require('express-session'); 
-
+const session = require('express-session');
+const slovakRoutes = require('./routes/sk')
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
@@ -30,6 +30,7 @@ app.use(session({
   resave: false,
   saveUninitialized: false
 }));
+app.use('/sk', slovakRoutes);
 
 app.set('view engine', 'ejs');
 
@@ -56,7 +57,7 @@ app.get('/', async (req, res, next) => {
   try {
     const projects = await Project.find({});
     res.render('index', { projects });
-  } catch(e) {
+  } catch (e) {
     next(e)
   }
 });
@@ -104,8 +105,8 @@ app.post('/projects', auth.requireAdmin, upload.array('images'), (req, res) => {
   const project = new Project(req.body.project);
   project.images = req.files.map(f => (f.filename));
   project.save()
-  .then(() => res.redirect('/projects'))
-  .catch(error => console.error(error));
+    .then(() => res.redirect('/projects'))
+    .catch(error => console.error(error));
 });
 
 app.get('/projects/new', auth.requireAdmin, (req, res) => {
@@ -116,7 +117,7 @@ app.get('/projects/:id', async (req, res, next) => {
   try {
     const project = await Project.findById(req.params.id);
     res.render('projects/show', { project });
-  } catch(err) {
+  } catch (err) {
     next(err);
   }
 })
@@ -125,7 +126,7 @@ app.get('/projects/:id/edit', auth.requireAdmin, async (req, res, next) => {
   try {
     const project = await Project.findById(req.params.id);
     res.render('projects/edit', { project })
-  } catch(e) {
+  } catch (e) {
     next(e)
   }
 })
@@ -136,7 +137,7 @@ app.post('/projects/:id/update', auth.requireAdmin, upload.array('images'), asyn
     project.images = req.files.map(f => (f.filename));
     await project.save();
     res.redirect('/projects');
-  } catch(e) {
+  } catch (e) {
     next(e)
   }
 })
@@ -148,7 +149,7 @@ app.post('/projects/:id/delete', auth.requireAdmin, async (req, res, next) => {
       res.status(404).send('Project not found');
       return;
     }
-    
+
     deletedProject.images.forEach((filename) => {
       const imagePath = path.join(__dirname, 'public', 'uploads', filename);
       fs.unlink(imagePath, (err) => {
@@ -157,7 +158,7 @@ app.post('/projects/:id/delete', auth.requireAdmin, async (req, res, next) => {
         }
       });
     });
-    
+
     res.redirect('/projects');
   } catch (err) {
     next(err);

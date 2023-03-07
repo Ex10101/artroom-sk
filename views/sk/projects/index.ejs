@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="sk">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&family=Montserrat:wght@400;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/stylesheets/navbar.css">
+  <link rel="stylesheet" href="../../stylesheets/indexProjects.css">
+  <link rel="stylesheet" href="/stylesheets/footer.css">
+  <link rel="stylesheet" href="/stylesheets/animations.css">
+  <title>Artroom</title>
+</head>
+
+<body>
+
+  <div class="navhead">
+    <header>
+      <a href="/">
+        <div id="logo">Artroom</div>
+      </a>
+      <div id="hamburger">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
+      <nav id="navbar">
+        <ul>
+          <li>
+            <a href="/sk" class="navbar-link">Domov</a>
+          </li>
+          <li>
+            <a href="/sk/projects" class="navbar-link active">Projekty</a>
+          </li>
+          <li>
+            <a href="/sk/about" class="navbar-link">O nás</a>
+          </li>
+          <li>
+            <a href="/sk/prices" class="navbar-link">Ceny</a>
+          </li>
+          <li>
+            <a href="/sk/contacts" class="navbar-link">Kontakt</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+  </div>
+
+  <div class="filter-buttons">
+    <button class="filter-button" data-type="architecture">Architektúra</button>
+    <button class="filter-button" data-type="visualisation">Vizualizácia</button>
+    <button class="filter-button active" data-type="design">Dizajn</button>
+  </div>
+
+  <div class="section hidden" data-type="architecture">
+    <div class="grid">
+      <% for (let project of architectureProjects) { %>
+      <a href="/sk/projects/<%=project._id%>">
+        <div class="grid-item">
+          <div class="card">
+            <img class="card-img" src="/uploads/<%=project.images[0]%>" alt="">
+            <div class="card-content">
+              <h2 class="card-header">
+                <%=project.name%>
+              </h2>
+              <p class="card-text">
+                <%=project.description%>
+              </p>
+            </div>
+          </div>
+        </div>
+      </a>
+      <% } %>
+    </div>
+  </div>
+
+  <div class="section hidden" data-type="visualisation">
+    <div class="grid">
+      <% for (let project of visualisationProjects) { %>
+      <a href="/sk/projects/<%=project._id%>">
+        <div class="grid-item">
+          <div class="card">
+            <img class="card-img" src="/uploads/<%=project.images[0]%>" alt="">
+            <div class="card-content">
+              <h2 class="card-header">
+                <%=project.name%>
+              </h2>
+              <p class="card-text">
+                <%=project.description%>
+              </p>
+            </div>
+          </div>
+        </div>
+      </a>
+      <% } %>
+    </div>
+  </div>
+
+  <div class="section hidden" data-type="design">
+    <div class="grid">
+      <% for (let project of designProjects) { %>
+      <a href="/sk/projects/<%=project._id%>">
+        <div class="grid-item">
+          <div class="card">
+            <img class="card-img" src="/uploads/<%=project.images[0]%>" alt="">
+            <div class="card-content">
+              <h2 class="card-header">
+                <%=project.name%>
+              </h2>
+              <p class="card-text">
+                <%=project.description%>
+              </p>
+            </div>
+          </div>
+        </div>
+      </a>
+      <% } %>
+    </div>
+  </div>
+
+
+
+  <footer>
+    <div class="footer">
+      <div class="contact-info">
+        <h5>Kontaktné informácie:</h5>
+        <p class="address">Mozartova 4912/10,<br> 811 02 Bratislava - Stare Mesto</p>
+        <p class="email">Email: <a href="mailto:artroom.box@gmail.com">artroom.box@gmail.com</a></p>
+        <p class="phone-number">Telefónne číslo: +421 949 227 794</p>
+      </div>
+      <div class="working-hours">
+        <h5>Pracovné hodiny:</h5>
+        <p>Pondelok-Piatok - 10:00-18:00</p>
+        <p>Sobota-Nedeľa - nepracujeme</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="copyright">
+    <p> © ARTROOM Architektonické štúdio.
+      Všetky práva vyhradené.
+      Všetky vizuálne materiály na webovej stránke patria architektonickému štúdiu ARTROOM.
+      Kopírovanie akýchkoľvek materiálov tretími stranami bez písomného povolenia je zakázané. </p>
+  </div>
+
+  <script src="/scripts/navbar-transparent.js"></script>
+  <script src="/scripts/navbar.js"></script>
+  <script src="/scripts/filterByType.js"></script>
+  <script src="/scripts/animations.js"></script>
+</body>
+
+</html>
