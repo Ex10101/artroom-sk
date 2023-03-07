@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="/stylesheets/navbar.css">
   <link rel="stylesheet" href="../../stylesheets/indexProjects.css">
   <link rel="stylesheet" href="/stylesheets/footer.css">
+  <link rel="stylesheet" href="/stylesheets/animations.css">
   <title>Artroom</title>
 </head>
 
@@ -54,7 +55,7 @@
     <button class="filter-button active" data-type="design">Design</button>
   </div>
 
-  <div class="section" data-type="architecture">
+  <div class="section hidden" data-type="architecture">
     <div class="grid">
       <% for (let project of architectureProjects) { %>
       <a href="/projects/<%=project._id%>">
@@ -76,7 +77,7 @@
     </div>
   </div>
 
-  <div class="section" data-type="visualisation">
+  <div class="section hidden" data-type="visualisation">
     <div class="grid">
       <% for (let project of visualisationProjects) { %>
       <a href="/projects/<%=project._id%>">
@@ -98,7 +99,7 @@
     </div>
   </div>
 
-  <div class="section" data-type="design">
+  <div class="section hidden" data-type="design">
     <div class="grid">
       <% for (let project of designProjects) { %>
       <a href="/projects/<%=project._id%>">
@@ -148,6 +149,7 @@
   <script src="/scripts/navbar-transparent.js"></script>
   <script src="/scripts/navbar.js"></script>
   <script src="/scripts/filterByType.js"></script>
+  <script src="/scripts/animations.js"></script>
 </body>
 
 </html>

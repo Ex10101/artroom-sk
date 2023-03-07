@@ -1,0 +1,36 @@
+@keyframes showBanner {
+    0% {
+        opacity: 0%;
+        transform: translateY(-60%);
+    }
+    100% {
+        opacity: 100%;
+        transform: translateY(0%);
+    }
+}
+#error-msg h1 {
+    animation: 1s ease-out 0s 1 showBanner;
+    text-align: center;
+    margin-bottom: 50px;
+}
+#error-msg a {
+    animation: 1s ease-out 0s 1 showBanner;
+    font-size: 20px;
+    text-align: center;
+    background-color: #22222e;
+    padding: 20px;
+    border-radius: 25px;
+    color: white;
+    transition: 0.5s;
+}
+#error-msg a:hover {
+    transform: translateY(-5%);
+    background-color: #4a4a50;
+}
+#error-msg {
+    margin: 300px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}

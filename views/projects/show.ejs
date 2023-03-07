@@ -62,12 +62,10 @@
       </span>
     </div>
 
-    <div class="not-carousel-container">
-      <div class="not-carousel">
-        <% for (let image of project.images) { %>
-        <div><img src="/uploads/<%= image %>" alt="Project image"></div>
-        <% } %>
-      </div>
+    <div class="pictures-container">
+      <% for (let image of project.images) { %>
+      <div class="picture"><img src="/uploads/<%= image %>" alt="Project image"></div>
+      <% } %>
     </div>
   </div>
 

@@ -7,6 +7,8 @@ const Project = require('./models/project');
 const multer = require('multer');
 const path = require('path');
 const fs = require('fs');
+const auth = require('./middleware/auth');
+const session = require('express-session'); 
 
 
 const storage = multer.diskStorage({
@@ -23,6 +25,11 @@ const upload = multer({ storage: storage });
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
 app.use(express.static('public'));
+app.use(session({
+  secret: 'secret-key',
+  resave: false,
+  saveUninitialized: false
+}));
 
 app.set('view engine', 'ejs');
 
@@ -45,12 +52,16 @@ app.use(express.urlencoded({ extended: true }));
 app.set('view engine', 'ejs');
 
 
-app.get('/', async (req, res) => {
-  const projects = await Project.find({});
-  res.render('index', { projects });
+app.get('/', async (req, res, next) => {
+  try {
+    const projects = await Project.find({});
+    res.render('index', { projects });
+  } catch(e) {
+    next(e)
+  }
 });
 
-app.get('/projects', async (req, res) => {
+app.get('/projects', async (req, res, next) => {
   try {
     const architectureProjects = await Project.find({ type: 'Architecture' });
     const visualisationProjects = await Project.find({ type: 'Visualisation' });
@@ -64,17 +75,32 @@ app.get('/projects', async (req, res) => {
       projects
     });
   } catch (err) {
-    console.error(err);
-    res.status(500).send('Internal Server Error');
+    next(err);
   }
 });
 
-
-app.get('/projects/new', (req, res) => {
-  res.render('projects/new');
+app.get('/login', (req, res) => {
+  res.render('login');
 })
 
-app.post('/projects', upload.array('images'), (req, res) => {
+app.post('/login', (req, res) => {
+  const username = req.body.username;
+  const password = req.body.password;
+
+  if (auth.authenticateAdmin(username, password)) {
+    req.session.admin = true;
+    res.redirect('/admin');
+  } else {
+    res.send('Wrong password or username');
+  }
+})
+
+app.get('/admin', auth.requireAdmin, (req, res) => {
+  res.render('admin');
+})
+
+
+app.post('/projects', auth.requireAdmin, upload.array('images'), (req, res) => {
   const project = new Project(req.body.project);
   project.images = req.files.map(f => (f.filename));
   project.save()
@@ -82,24 +108,40 @@ app.post('/projects', upload.array('images'), (req, res) => {
   .catch(error => console.error(error));
 });
 
-app.get('/projects/:id', async (req, res) => {
-  const project = await Project.findById(req.params.id);
-  res.render('projects/show', { project });
+app.get('/projects/new', auth.requireAdmin, (req, res) => {
+  res.render('projects/new');
 })
 
-app.get('/projects/:id/edit', async (req, res) => {
-  const project = await Project.findById(req.params.id);
-  res.render('projects/edit', { project })
+app.get('/projects/:id', async (req, res, next) => {
+  try {
+    const project = await Project.findById(req.params.id);
+    res.render('projects/show', { project });
+  } catch(err) {
+    next(err);
+  }
 })
 
-app.post('/projects/:id/update', upload.array('images'), async (req, res) => {
-  const project = await Project.findByIdAndUpdate(req.params.id, { ...req.body.project });
-  project.images = req.files.map(f => (f.filename));
-  await project.save();
-  res.redirect('/projects');
+app.get('/projects/:id/edit', auth.requireAdmin, async (req, res, next) => {
+  try {
+    const project = await Project.findById(req.params.id);
+    res.render('projects/edit', { project })
+  } catch(e) {
+    next(e)
+  }
 })
 
-app.post('/projects/:id/delete', async (req, res) => {
+app.post('/projects/:id/update', auth.requireAdmin, upload.array('images'), async (req, res, next) => {
+  try {
+    const project = await Project.findByIdAndUpdate(req.params.id, { ...req.body.project });
+    project.images = req.files.map(f => (f.filename));
+    await project.save();
+    res.redirect('/projects');
+  } catch(e) {
+    next(e)
+  }
+})
+
+app.post('/projects/:id/delete', auth.requireAdmin, async (req, res, next) => {
   try {
     const deletedProject = await Project.findByIdAndDelete(req.params.id);
     if (!deletedProject) {
@@ -118,8 +160,7 @@ app.post('/projects/:id/delete', async (req, res) => {
     
     res.redirect('/projects');
   } catch (err) {
-    console.error(err);
-    res.redirect('/projects');
+    next(err);
   }
 });
 
@@ -127,13 +168,20 @@ app.get('/prices', (req, res) => {
   res.render('prices');
 });
 
-app.get('/about', async (req, res) => {
-  const projects = await Project.find({});
-  res.render('about', { projects });
+app.get('/about', (req, res) => {
+  res.render('about');
 })
 
 app.get('/contacts', (req, res) => {
   res.render('contacts');
+})
+
+app.all('*', (req, res) => {
+  res.render('error404');
+})
+
+app.use((err, req, res, next) => {
+  res.render('error');
 })
 
 app.listen(port, () => {
