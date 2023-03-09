@@ -96,6 +96,11 @@ app.post('/login', (req, res) => {
   }
 })
 
+app.get('/logout', (req, res) => {
+  req.session.admin = false;
+  res.redirect('/'); //redirect to the previous page
+})
+
 app.get('/admin', auth.requireAdmin, (req, res) => {
   res.render('admin');
 })
@@ -115,8 +120,9 @@ app.get('/projects/new', auth.requireAdmin, (req, res) => {
 
 app.get('/projects/:id', async (req, res, next) => {
   try {
+    const admin = req.session.admin;
     const project = await Project.findById(req.params.id);
-    res.render('projects/show', { project });
+    res.render('projects/show', { project, admin });
   } catch (err) {
     next(err);
   }

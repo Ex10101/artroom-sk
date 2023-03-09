@@ -65,6 +65,7 @@ select {
     color: #929292;
     border-radius: 5px;
     cursor: pointer;
+    transition: .3s;
 }
 
 select option {
