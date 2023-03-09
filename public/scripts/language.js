@@ -1,11 +1,18 @@
 const languageSelect = document.getElementById("language");
 
-languageSelect.addEventListener("change", function() {
+languageSelect.addEventListener("change", function () {
   const selectedValue = languageSelect.value;
+  const currentUrl = window.location.href;
 
   if (selectedValue === "sk") {
-    window.location.href = "/sk";
+    if (!currentUrl.includes("/sk/")) {
+      const newUrl = currentUrl.replace(/(^\w+:|^)\/\/([^\/]+)/, `$1//$2/sk/`);
+      window.location.href = newUrl;
+    }
   } else {
-    window.location.href = "/";
+    if (currentUrl.includes("/sk/")) {
+      const newUrl = currentUrl.replace("/sk/", "/");
+      window.location.href = newUrl;
+    }
   }
 });
