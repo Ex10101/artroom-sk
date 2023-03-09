@@ -119,4 +119,8 @@ select option {
     #navbar ul li {
         margin-bottom: 8px;
     }
+
+    header {
+        padding: 10px;
+    }
 }
