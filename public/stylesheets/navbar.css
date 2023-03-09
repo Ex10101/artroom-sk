@@ -72,7 +72,7 @@ select option {
     color: #333;
 }
 
-@media only screen and (max-width: 760px) {
+@media only screen and (max-width: 1000px) {
     #hamburger {
         display: block;
         cursor: pointer;
