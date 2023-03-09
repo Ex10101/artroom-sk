@@ -3,6 +3,7 @@
         opacity: 0%;
         transform: translateY(-60%);
     }
+
     100% {
         opacity: 100%;
         transform: translateY(0%);
@@ -25,6 +26,7 @@ header {
     background-image: url("/staticImages/jason-wong-qn1aw4FOM9g-unsplash.jpg");
     background-size: cover;
 }
+
 #welcome-banner h1 {
     animation: 1s ease-out 0s 1 showBanner;
 
@@ -33,6 +35,7 @@ header {
     font-size: 50px;
     margin-bottom: 20px;
 }
+
 #welcome-banner p {
     animation: 1s ease-out 0s 1 showBanner;
     text-align: center;
@@ -49,19 +52,23 @@ header {
     width: 100%;
     padding: 100px 0 100px 0;
 }
+
 #gen-banner img {
     width: 500px;
     height: 500px;
 }
+
 #g-banner-text {
     display: flex;
     flex-direction: column;
     width: 35%;
 }
+
 #g-banner-text h1 {
     margin-bottom: 40px;
     font-size: 35px;
 }
+
 #g-banner-text p {
     font-size: 15px;
     margin-bottom: 20px;
@@ -73,6 +80,7 @@ header {
     margin-top: 100px;
     font-size: 40px;
 }
+
 #advantages-grid {
     display: flex;
     padding: 100px 0 100px 0;
@@ -80,6 +88,7 @@ header {
     flex-wrap: wrap;
     border-bottom: 2px solid black;
 }
+
 .advantages-item {
     display: flex;
     text-align: center;
@@ -88,13 +97,16 @@ header {
     width: 300px;
     margin: 50px 50px;
 }
+
 .advantages-item img {
     margin-bottom: 60px;
 }
+
 .advantages-item h2 {
     font-size: 19px;
     margin-bottom: 20px;
 }
+
 .advantages-item p {
     font-size: 15px;
 }
@@ -105,27 +117,33 @@ header {
     margin-top: 100px;
     font-size: 40px;
 }
+
 #works-showbanner {
     padding: 50px 0 50px 0;
     display: flex;
     align-items: center;
     justify-content: center;
 }
+
 .works-project {
     position: relative;
     margin: 0px 20px;
 }
-.works-project img{
+
+.works-project img {
     object-fit: cover;
     width: 30vw;
     height: 600px;
 }
-.works-project:hover > .works-name {
+
+.works-project:hover>.works-name {
     opacity: 100%;
 }
+
 .works-project:hover {
     cursor: pointer;
 }
+
 .works-name {
     display: flex;
     align-items: center;
@@ -138,6 +156,7 @@ header {
     opacity: 0;
     transition: 0.5s;
 }
+
 .works-name h3 {
     text-align: center;
     color: white;
@@ -147,9 +166,11 @@ header {
     text-align: center;
     font-size: 35px;
 }
+
 #contacts-link {
     margin-bottom: 50px;
 }
+
 #contacts-link a {
     display: block;
     text-align: center;
@@ -161,61 +182,73 @@ header {
     border-radius: 50px;
     transition: 0.7s;
 }
+
 #contacts-link a:hover {
     width: 250px;
     background-color: #5c5b5b;
 }
 
 
-
 @media (max-width: 1100px) {
-    #gen-banner img{
+    #gen-banner img {
         width: 370px;
         height: 370px;
     }
+
     #works-showbanner {
         flex-direction: column;
     }
+
     .works-name {
         width: 90vw;
     }
+
     .works-project img {
         width: 90vw;
     }
+
     .works-project {
         margin-bottom: 30px;
     }
 }
+
 @media (max-width: 950px) {
-    #gen-banner img{
+    #gen-banner img {
         width: 420px;
         height: 420px;
     }
+
     #gen-banner {
         height: 70rem;
         flex-direction: column;
         justify-content: space-evenly;
     }
+
     #g-banner-text {
         width: 80%;
     }
 }
+
 @media (max-width: 700px) {
     #g-banner-text h1 {
         font-size: 30px;
     }
 }
+
 @media (max-width: 650px) {
     #welcome-banner h1 {
         font-size: 30px;
     }
+
     #welcome-banner p {
         font-size: 15px;
     }
-    #gen-banner img{
+
+    #gen-banner img {
         width: 350px;
         height: 350px;
     }
+
     #gen-banner {
         padding: 0px 0 0px 0;
     }

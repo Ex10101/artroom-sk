@@ -56,6 +56,22 @@ header {
     background-color: white;
 }
 
+
+select {
+    border: none;
+    background-color: transparent;
+    padding: 10px;
+    font-size: 12px;
+    color: #929292;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+select option {
+    background-color: #fff;
+    color: #333;
+}
+
 @media only screen and (max-width: 760px) {
     #hamburger {
         display: block;
