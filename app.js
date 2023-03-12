@@ -1,6 +1,5 @@
 const express = require('express');
 const app = express();
-const dbUrl = 'mongodb://127.0.0.1:27017/artroom';
 const mongoose = require('mongoose');
 const methodOverride = require('method-override');
 const Project = require('./models/project');
@@ -9,7 +8,8 @@ const path = require('path');
 const fs = require('fs');
 const auth = require('./middleware/auth');
 const session = require('express-session');
-const slovakRoutes = require('./routes/sk')
+const slovakRoutes = require('./routes/sk');
+const dbUrl = process.env.DB_URL;
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
