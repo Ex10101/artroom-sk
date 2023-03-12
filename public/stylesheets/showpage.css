@@ -93,6 +93,10 @@ footer {
     align-items: center;
 }
 
+header {
+    position: fixed;
+}
+
 @media (max-width: 1715px) {
     .picture img {
         width: 1200px;
