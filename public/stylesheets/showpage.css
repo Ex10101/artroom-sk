@@ -1,12 +1,11 @@
 .projectName {
     text-align: center;
-    margin-top: 50px;
 }
 
 #projectName {
     font-size: 3rem;
     font-weight: bold;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
 }
 
 .projectDescription {
@@ -17,12 +16,12 @@
 }
 
 #projectDescription {
-    font-size: 1.5rem;
+    font-size: 1rem;
 }
 
 img {
+    margin: 10px;
     display: block;
-    margin: 60px auto;
     width: 100%;
     height: auto;
     max-width: 1280px;
@@ -64,12 +63,12 @@ button[type="submit"] {
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
+    width: 100%;
 }
 .picture img {
-    margin: 20px;
     object-fit: cover;
-    width: 46vw;
-    height: 700px;
+    width: 640px;
+    height: 360px;
 }
 
 footer {
@@ -85,8 +84,7 @@ footer {
 .content-container {
     min-height: calc(100vh - 80px);
     box-sizing: border-box;
-    padding: 20px;
-    width: auto;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -97,12 +95,24 @@ header {
     position: fixed;
 }
 
-@media (max-width: 1715px) {
-    .picture img {
-        width: 1200px;
-        height: auto;
-    }
+.navhead {
+    height: 50px;
+    margin-bottom: 20px;
 }
+
+.artroom-logo {
+    width: 195px;
+    height: 31px;
+    margin: 0;
+    display: flex;
+}
+
+/* @media (max-width: 1715px) {
+    .picture img {
+        width: 320px;
+        height: 180px;
+    }
+} */
 
 @media (max-width: 1280px) {
     #projectName {
@@ -110,18 +120,6 @@ header {
     }
     .projectDescription {
         width: 75%;
-    }
-    .picture img {
-        margin: 10px;
-        width: 90vw;
-        height: 250px;
-    }
-}
-@media (max-width: 850px) {
-    .picture img {
-        margin: 10px;
-        width: 90vw;
-        height: 250px;
     }
 }
 
@@ -139,6 +137,11 @@ header {
     #projectDescription {
         font-size: 18px;
     }
+    .picture img {
+        margin: 10px;
+        width: 80vw;
+        height: 300px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -153,5 +156,10 @@ header {
     }
     #projectName {
         font-size: 30px;
+    }
+    .picture img {
+        margin: 10px;
+        width: 80vw;
+        height: 200px;
     }
 }

@@ -28,7 +28,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
 app.use(express.static('public'));
 app.use(session({
-  secret: 'secret-key',
+  secret: process.env.SECRET,
   resave: false,
   saveUninitialized: false
 }));

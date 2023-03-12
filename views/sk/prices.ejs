@@ -11,12 +11,13 @@
   <link rel="stylesheet" href="/stylesheets/footer.css">
   <link rel="stylesheet" href="/stylesheets/navbar.css">
   <link rel="stylesheet" href="/stylesheets/prices.css">
+  <link rel="icon" type="image/x-icon" href="/staticImages/favicon-32x32.png">
 </head>
 
 <body>
   <header>
     <a href="/">
-      <div id="logo">Artroom</div>
+      <div id="logo"><img src="/staticImages/logo.png" alt="artroom logo" class="artroom-logo"></div>
     </a>
     <div id="hamburger">
       <div class="line"></div>
@@ -26,7 +27,7 @@
     <nav id="navbar">
       <ul>
         <li>
-          <a href="/sk" class="navbar-link">Domov</a>
+          <a href="/sk/" class="navbar-link">Domov</a>
         </li>
         <li>
           <a href="/sk/projects" class="navbar-link">Projekty</a>
@@ -40,12 +41,14 @@
         <li>
           <a href="/sk/contacts" class="navbar-link">Kontakt</a>
         </li>
+        <li>
+          <select name="language" id="language" class="language-select">
+            <option value="sk" selected>Slovenčina</option>
+            <option value="en">English</option>
+          </select>
+        </li>
       </ul>
     </nav>
-    <select name="language" id="language">
-      <option value="sk" selected>Slovenčina</option>
-      <option value="en">English</option>
-    </select>
   </header>
 
   <div class="prices">
@@ -53,15 +56,15 @@
     <div class="price">
 
       <div class="image">
-        <img src="/uploads/1677524521675.jpg" alt="">
+        <img src="/uploads/1677524521675.jpg" alt="" class="price-cover">
       </div>
 
       <h2>Základný</h2>
-      <p>$10/m2</p>
+      <p>€17/m2</p>
       <ul>
-        <li>Koncepcia dizajnu</li>
-        <li>Odporúčania nábytku a dekorácie</li>
-        <li>Základný pôdorys</li>
+        <li>3D vizualizácia</li>
+        <li>Plán umiestnenia</li>
+        <li>Meračské výkresy</li>
       </ul>
       <a href="/sk/contacts"><button>Viac informácií</button></a>
     </div>
@@ -69,16 +72,16 @@
     <div class="price">
 
       <div class="image">
-        <img src="/uploads/1677524658025.jpg" alt="">
+        <img src="/uploads/1677524658025.jpg" alt="" class="price-cover">
       </div>
 
       <h2>Pokročilý</h2>
-      <p>$20/m2</p>
+      <p>€30/m2</p>
       <ul>
-        <li>Tri kolá revízií</li>
-        <li>Odporúčania osvetlenia</li>
-        <li>Odporúčania farieb na steny</li>
-        <li>Podrobný pôdorys</li>
+        <li>3D vizualizácia</li>
+        <li>Plán umiestnenia</li>
+        <li>Meračské výkresy</li>
+        <li>Všetky technické aspekty zobrazené</li>
       </ul>
       <a href="/sk/contacts"><button>Viac informácií</button></a>
     </div>
@@ -86,17 +89,17 @@
     <div class="price">
 
       <div class="image">
-        <img src="/uploads/1677524680010.jpg " alt="">
+        <img src="/uploads/1677524680010.jpg " alt="" class="price-cover">
       </div>
 
       <h2>Premium</h2>
-      <p>$30/m2</p>
+      <p>€50/m2</p>
       <ul>
-        <li>Neobmedzené množstvo revízií</li>
-        <li>Pôvodný nábytok</li>
-        <li>Pôvodný nábytok z dreva</li>
-        <li>Podrobný pôdorys</li>
-        <li>Koncepcia dizajnu</li>
+        <li>3D vizualizácia</li>
+        <li>Plán umiestnenia</li>
+        <li>Meračské výkresy</li>
+        <li>Všetky technické aspekty zobrazené</li>
+        <li>Špecifikované prvky a materiály</li>
       </ul>
       <a href="/sk/contacts"><button>Viac informácií</button></a>
     </div>

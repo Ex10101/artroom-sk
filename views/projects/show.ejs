@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sk">
 
 <head>
   <meta charset="UTF-8">
@@ -12,45 +12,51 @@
   <link rel="stylesheet" href="/stylesheets/showpage.css">
   <link rel="stylesheet" href="/stylesheets/footer.css">
   <link rel="stylesheet" href="/stylesheets/lightbox.css">
+  <link rel="icon" type="image/x-icon" href="/staticImages/favicon-32x32.png">
   <title>
     <%= project.name %>
   </title>
 </head>
 
 <body>
-  <header>
-    <a href="/">
-      <div id="logo">Artroom</div>
-    </a>
-    <div id="hamburger">
-      <div class="line"></div>
-      <div class="line"></div>
-      <div class="line"></div>
-    </div>
-    <nav id="navbar">
-      <ul>
-        <li>
-          <a href="/" class="navbar-link">Home</a>
-        </li>
-        <li>
-          <a href="/projects" class="navbar-link active">Projects</a>
-        </li>
-        <li>
-          <a href="/about" class="navbar-link">About</a>
-        </li>
-        <li>
-          <a href="/prices" class="navbar-link">Pricing</a>
-        </li>
-        <li>
-          <a href="/contacts" class="navbar-link">Contacts</a>
-        </li>
-      </ul>
-    </nav>
-    <select name="language" id="language">
-      <option value="sk">Slovenčina</option>
-      <option value="en" selected>English</option>
-    </select>
-  </header>
+
+  <div class="navhead">
+    <header>
+      <a href="/">
+        <div id="logo"><img src="/staticImages/logo.png" alt="artroom logo" class="artroom-logo"></div>
+      </a>
+      <div id="hamburger">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
+      <nav id="navbar">
+        <ul>
+          <li>
+            <a href="/" class="navbar-link">Home</a>
+          </li>
+          <li>
+            <a href="/projects" class="navbar-link active">Projects</a>
+          </li>
+          <li>
+            <a href="/about" class="navbar-link">About</a>
+          </li>
+          <li>
+            <a href="/prices" class="navbar-link">Pricing</a>
+          </li>
+          <li>
+            <a href="/contacts" class="navbar-link">Contacts</a>
+          </li>
+          <li>
+            <select name="language" id="language" class="language-select">
+              <option value="sk">Slovenčina</option>
+              <option value="en" selected>English</option>
+            </select>
+          </li>
+        </ul>
+      </nav>
+    </header>
+  </div>
 
   <div class="content-container">
     <div class="projectName">
@@ -67,7 +73,7 @@
 
     <div class="pictures-container">
       <% for (let image of project.images) { %>
-      <div class="picture"><a href="/uploads/<%= image %>" data-lightbox="gallery"><img src="/uploads/<%= image %>" alt="Project image"></a></div>
+      <div class="picture"><a href="/uploads/<%= image %>" data-lightbox="gallery"><img src="/uploads/<%= image %>" alt="Project image" class="project-image"></a></div>
       <% } %>
     </div>
   </div>

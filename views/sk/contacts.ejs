@@ -12,13 +12,14 @@
   <link rel="stylesheet" href="/stylesheets/footer.css">
   <link rel="stylesheet" href="/stylesheets/contacts.css">
   <link rel="stylesheet" href="/stylesheets/animations.css">
+  <link rel="icon" type="image/x-icon" href="/staticImages/favicon-32x32.png">
   <title>Artroom</title>
 </head>
 
 <body>
   <header>
     <a href="/">
-      <div id="logo">Artroom</div>
+      <div id="logo"><img src="/staticImages/logo.png" alt="artroom logo" class="artroom-logo"></div>
     </a>
     <div id="hamburger">
       <div class="line"></div>
@@ -28,7 +29,7 @@
     <nav id="navbar">
       <ul>
         <li>
-          <a href="/sk" class="navbar-link">Domov</a>
+          <a href="/sk/" class="navbar-link">Domov</a>
         </li>
         <li>
           <a href="/sk/projects" class="navbar-link">Projekty</a>
@@ -42,12 +43,14 @@
         <li>
           <a href="/sk/contacts" class="navbar-link active">Kontakt</a>
         </li>
+        <li>
+          <select name="language" id="language" class="language-select">
+            <option value="sk" selected>Slovenčina</option>
+            <option value="en">English</option>
+          </select>
+        </li>
       </ul>
     </nav>
-    <select name="language" id="language">
-      <option value="sk" selected>Slovenčina</option>
-      <option value="en">English</option>
-    </select>
   </header>
 
 

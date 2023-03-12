@@ -10,13 +10,14 @@
   <link rel="stylesheet" href="/stylesheets/footer.css">
   <link rel="stylesheet" href="/stylesheets/navbar.css">
   <link rel="stylesheet" href="/stylesheets/about.css">
+  <link rel="icon" type="image/x-icon" href="/staticImages/favicon-32x32.png">
   <title>About</title>
 </head>
 
 <body>
   <header>
     <a href="/">
-      <div id="logo">Artroom</div>
+      <div id="logo"><img src="/staticImages/logo.png" alt="artroom logo" class="artroom-logo"></div>
     </a>
     <div id="hamburger">
       <div class="line"></div>
@@ -40,12 +41,14 @@
         <li>
           <a href="/contacts" class="navbar-link">Contacts</a>
         </li>
+        <li>
+          <select name="language" id="language" class="language-select">
+            <option value="sk">Slovenčina</option>
+            <option value="en" selected>English</option>
+          </select>
+        </li>
       </ul>
     </nav>
-    <select name="language" id="language">
-      <option value="sk">Slovenčina</option>
-      <option value="en" selected>English</option>
-    </select>
   </header>
 
   <main>

@@ -12,45 +12,51 @@
   <link rel="stylesheet" href="/stylesheets/showpage.css">
   <link rel="stylesheet" href="/stylesheets/footer.css">
   <link rel="stylesheet" href="/stylesheets/lightbox.css">
+  <link rel="icon" type="image/x-icon" href="/staticImages/favicon-32x32.png">
   <title>
     <%= project.name %>
   </title>
 </head>
 
 <body>
-  <header>
-    <a href="/">
-      <div id="logo">Artroom</div>
-    </a>
-    <div id="hamburger">
-      <div class="line"></div>
-      <div class="line"></div>
-      <div class="line"></div>
-    </div>
-    <nav id="navbar">
-      <ul>
-        <li>
-          <a href="/sk" class="navbar-link">Domov</a>
-        </li>
-        <li>
-          <a href="/sk/projects" class="navbar-link active">Projekty</a>
-        </li>
-        <li>
-          <a href="/sk/about" class="navbar-link">O nás</a>
-        </li>
-        <li>
-          <a href="/sk/prices" class="navbar-link">Ceny</a>
-        </li>
-        <li>
-          <a href="/sk/contacts" class="navbar-link">Kontakt</a>
-        </li>
-      </ul>
-    </nav>
-    <select name="language" id="language">
-      <option value="sk" selected>Slovenčina</option>
-      <option value="en">English</option>
-    </select>
-  </header>
+
+  <div class="navhead">
+    <header>
+      <a href="/">
+        <div id="logo"><img src="/staticImages/logo.png" alt="artroom logo" class="artroom-logo"></div>
+      </a>
+      <div id="hamburger">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
+      <nav id="navbar">
+        <ul>
+          <li>
+            <a href="/sk/" class="navbar-link">Domov</a>
+          </li>
+          <li>
+            <a href="/sk/projects" class="navbar-link active">Projekty</a>
+          </li>
+          <li>
+            <a href="/sk/about" class="navbar-link">O nás</a>
+          </li>
+          <li>
+            <a href="/sk/prices" class="navbar-link">Ceny</a>
+          </li>
+          <li>
+            <a href="/sk/contacts" class="navbar-link">Kontakt</a>
+          </li>
+          <li>
+            <select name="language" id="language" class="language-select">
+              <option value="sk" selected>Slovenčina</option>
+              <option value="en">English</option>
+            </select>
+          </li>
+        </ul>
+      </nav>
+    </header>
+  </div>
 
   <div class="content-container">
     <div class="projectName">
@@ -71,7 +77,7 @@
       <% } %>
     </div>
   </div>
-  
+
   <% if (admin) { %>
   <a href="/projects/<%= project._id %>/edit" class="edit-link">Edit project</a>
   <form action="/projects/<%= project._id %>/delete" method="POST" class="delete-form">
