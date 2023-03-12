@@ -7,6 +7,7 @@ const multer = require('multer');
 const path = require('path');
 const fs = require('fs');
 const auth = require('./middleware/auth');
+const helmet = require("helmet");
 const session = require('express-session');
 const slovakRoutes = require('./routes/sk');
 const dbUrl = process.env.DB_URL;
@@ -22,6 +23,7 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage: storage });
 
+app.use(helmet());
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
 app.use(express.static('public'));

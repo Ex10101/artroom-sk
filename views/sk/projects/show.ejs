@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="/stylesheets/navbar.css">
   <link rel="stylesheet" href="/stylesheets/showpage.css">
   <link rel="stylesheet" href="/stylesheets/footer.css">
+  <link rel="stylesheet" href="/stylesheets/lightbox.css">
   <title>
     <%= project.name %>
   </title>
@@ -66,11 +67,10 @@
 
     <div class="pictures-container">
       <% for (let image of project.images) { %>
-      <div class="picture"><img src="/uploads/<%= image %>" alt="Project image"></div>
+        <div class="picture"><a href="/uploads/<%= image %>" data-lightbox="gallery"><img src="/uploads/<%= image %>" alt="Project image"></a></div>
       <% } %>
     </div>
   </div>
-
   <a href="/projects/<%= project._id %>/edit" class="edit-link">Edit project</a>
   <form action="/projects/<%= project._id %>/delete" method="POST" class="delete-form">
     <button type="submit" class="delete-button">Delete Project</button>
@@ -102,10 +102,16 @@
       Kopírovanie akýchkoľvek materiálov tretími stranami bez písomného povolenia je zakázané. </p>
   </div>
 
-
+  <script src="/scripts/lightbox-plus-jquery.js"></script>
   <script src="/scripts/language.js"></script>
   <script src="/scripts/navbar.js"></script>
   <script src="/scripts/navbar-transparent.js"></script>
+  <script>
+    lightbox.option({
+      wrapAround: true,
+      resizeDuration: 300
+    })
+  </script>
 </body>
 
 </html>

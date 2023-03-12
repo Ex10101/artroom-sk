@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="/stylesheets/navbar.css">
   <link rel="stylesheet" href="/stylesheets/showpage.css">
   <link rel="stylesheet" href="/stylesheets/footer.css">
+  <link rel="stylesheet" href="/stylesheets/lightbox.css">
   <title>
     <%= project.name %>
   </title>
@@ -66,7 +67,7 @@
 
     <div class="pictures-container">
       <% for (let image of project.images) { %>
-      <div class="picture"><img src="/uploads/<%= image %>" alt="Project image"></div>
+      <div class="picture"><a href="/uploads/<%= image %>" data-lightbox="gallery"><img src="/uploads/<%= image %>" alt="Project image"></a></div>
       <% } %>
     </div>
   </div>
@@ -103,10 +104,16 @@
       Copying of any materials by third parties without written permission is prohibited. </p>
   </div>
 
-
+  <script src="/scripts/lightbox-plus-jquery.js"></script>
   <script src="/scripts/language.js"></script>
   <script src="/scripts/navbar.js"></script>
   <script src="/scripts/navbar-transparent.js"></script>
+  <script>
+    lightbox.option({
+      wrapAround: true,
+      resizeDuration: 300
+    })
+  </script>
 </body>
 
 </html>
