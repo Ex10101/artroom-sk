@@ -31,8 +31,9 @@ router.get('/projects', async (req, res, next) => {
 
 router.get('/projects/:id', async (req, res, next) => {
     try {
+        const admin = req.session.admin;
         const project = await Project.findById(req.params.id);
-        res.render('sk/projects/show', { project });
+        res.render('sk/projects/show', { project, admin });
     } catch (err) {
         next(err);
     }
