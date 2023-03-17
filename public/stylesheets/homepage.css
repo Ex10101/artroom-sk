@@ -53,15 +53,11 @@ header {
     padding: 100px 0 100px 0;
 }
 
-#gen-banner img {
-    width: 500px;
-    height: 500px;
-}
-
 #g-banner-text {
     display: flex;
     flex-direction: column;
-    width: 35%;
+    width: 60%;
+    text-align: center;
 }
 
 #g-banner-text h2 {
@@ -190,10 +186,6 @@ header {
 
 
 @media (max-width: 1100px) {
-    #gen-banner img {
-        width: 370px;
-        height: 370px;
-    }
 
     #works-showbanner {
         flex-direction: column;
@@ -213,16 +205,6 @@ header {
 }
 
 @media (max-width: 950px) {
-    #gen-banner img {
-        width: 420px;
-        height: 420px;
-    }
-
-    #gen-banner {
-        height: 70rem;
-        flex-direction: column;
-        justify-content: space-evenly;
-    }
 
     #g-banner-text {
         width: 80%;
@@ -247,9 +229,5 @@ header {
     #gen-banner img {
         width: 350px;
         height: 350px;
-    }
-
-    #gen-banner {
-        padding: 0px 0 0px 0;
     }
 }

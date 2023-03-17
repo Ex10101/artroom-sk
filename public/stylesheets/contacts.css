@@ -19,7 +19,7 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: center;
     padding-bottom: 150px;
     border-bottom: 2px solid #000;
 }
@@ -29,8 +29,8 @@
     text-align: center;
     flex-direction: column;
     align-items: center;
-    width: 300px;
-    margin: 25px;
+    width: 200px;
+    margin: 0 60px;
 }
 .contact-way img {
     margin-bottom: 25px;
@@ -61,11 +61,12 @@
 #s-networks {
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: center;
     padding-bottom: 100px;
 }
 .s-network {
     display: flex;
+    margin: 0 150px;
     flex-direction: column;
     align-items: center;
 }
