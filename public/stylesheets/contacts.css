@@ -18,7 +18,6 @@
 #contact-ways {
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
     justify-content: center;
     padding-bottom: 150px;
     border-bottom: 2px solid #000;
@@ -29,8 +28,8 @@
     text-align: center;
     flex-direction: column;
     align-items: center;
-    width: 200px;
-    margin: 0 60px;
+    width: 220px;
+    margin: 10px;
 }
 .contact-way img {
     margin-bottom: 25px;
@@ -66,7 +65,7 @@
 }
 .s-network {
     display: flex;
-    margin: 0 150px;
+    margin: 0 50px;
     flex-direction: column;
     align-items: center;
 }
@@ -75,4 +74,12 @@
 }
 .s-network img {
     margin-bottom: 20px;
+}
+@media (max-width: 720px) {
+    #s-networks {
+        flex-direction: column;
+    }
+    .s-network {
+        margin: 30px 0;
+    }
 }
