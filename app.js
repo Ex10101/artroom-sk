@@ -1,3 +1,8 @@
+if (process.env.NODE_ENV !== "production") {
+  require('dotenv').config();
+}
+
+
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
@@ -31,12 +36,6 @@ app.use(session({
   secret: process.env.SECRET,
   resave: false,
   saveUninitialized: false,
-  cookie: {
-    httpOnly: true,
-    secure: true,
-    expires: Date.now() + 1000 * 60 * 60 * 24 * 7,
-    maxAge: 1000 * 60 * 60 * 24 * 7
-  }
 }));
 app.use('/sk', slovakRoutes);
 

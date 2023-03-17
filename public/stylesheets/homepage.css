@@ -64,7 +64,7 @@ header {
     width: 35%;
 }
 
-#g-banner-text h1 {
+#g-banner-text h2 {
     margin-bottom: 40px;
     font-size: 35px;
 }
@@ -102,7 +102,7 @@ header {
     margin-bottom: 60px;
 }
 
-.advantages-item h2 {
+.advantages-item h3 {
     font-size: 19px;
     margin-bottom: 20px;
 }
