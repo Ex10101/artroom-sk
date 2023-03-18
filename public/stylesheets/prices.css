@@ -130,13 +130,7 @@
     z-index: 2;
 }
 
-.fixed-footer {
-    position: absolute;
-    width: 100%;
-    bottom: 0;
-}
-
-@media only screen and (min-width: 1920px) {
+@media only screen and (min-width: 1921px) {
     .prices {
         margin: 200px auto;
         max-width: 1600px;
@@ -152,6 +146,12 @@
 
     .price {
         height: 600px;
+    }
+
+    .fixed-footer {
+        position: absolute;
+        width: 100%;
+        bottom: 0;
     }
 }
 
