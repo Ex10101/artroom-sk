@@ -167,3 +167,8 @@
         width: 50%;
     }
 }
+@media (max-width: 400px) {
+    .price ul li {
+        font-size: 14px;
+    }
+}

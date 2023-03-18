@@ -1,3 +1,8 @@
+if (process.env.NODE_ENV !== "production") {
+  require('dotenv').config();
+}
+
+
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
@@ -11,6 +16,7 @@ const helmet = require("helmet");
 const session = require('express-session');
 const slovakRoutes = require('./routes/sk');
 const dbUrl = process.env.DB_URL;
+const MongoStore = require('connect-mongo');
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
@@ -27,10 +33,20 @@ app.use(helmet());
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
 app.use(express.static('public'));
+
+// const store = MongoStore.create({
+//   mongoUrl: dbUrl,
+//   touchAfter: 24 * 60 * 60,
+//   crypto: {
+//       secret: 'skibidiyes'
+//   }
+// });
+
 app.use(session({
+  // store,
   secret: process.env.SECRET,
   resave: false,
-  saveUninitialized: false
+  saveUninitialized: true,
 }));
 app.use('/sk', slovakRoutes);
 
