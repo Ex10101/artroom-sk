@@ -100,7 +100,7 @@ footer {
     margin-bottom: 30px;
     right: 50%;
     left: 50%;
-    top: 5%;
+    top: 30px;
     position: fixed;
     z-index: 2;
 }
