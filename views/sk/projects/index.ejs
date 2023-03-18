@@ -63,54 +63,54 @@
     <button class="filter-button active" data-type="design">Dizajn</button>
   </div>
 
-  <div class="section hidden" data-type="architecture">
-    <div class="grid">
-      <% for (let project of architectureProjects) { %>
-      <a href="/sk/projects/<%=project._id%>">
-        <div class="grid-item">
-          <div class="card">
-            <img class="card-img" src="/uploads/<%=project.images[0]%>" alt="obrazok projektu">
-            <div class="card-content">
-              <h2 class="card-header">
-                <%=project.name%>
-              </h2>
-              <p class="card-text">
-                <%=project.description%>
-              </p>
-            </div>
-          </div>
-        </div>
-      </a>
-      <% } %>
-    </div>
-  </div>
-
-  <div class="section hidden" data-type="visualisation">
-    <div class="grid">
-      <% for (let project of visualisationProjects) { %>
-      <a href="/sk/projects/<%=project._id%>">
-        <div class="grid-item">
-          <div class="card">
-            <img class="card-img" src="/uploads/<%=project.images[0]%>" alt="obrazok projektu">
-            <div class="card-content">
-              <h2 class="card-header">
-                <%=project.name%>
-              </h2>
-              <p class="card-text">
-                <%=project.description%>
-              </p>
-            </div>
-          </div>
-        </div>
-      </a>
-      <% } %>
-    </div>
-  </div>
-
-  <div class="section hidden" data-type="design">
+  <div class="section" data-type="design">
     <div class="grid">
       <% for (let project of designProjects) { %>
-      <a href="/sk/projects/<%=project._id%>">
+      <a href="/sk/projects/<%=project._id%>" class="hidden">
+        <div class="grid-item">
+          <div class="card">
+            <img class="card-img" src="/uploads/<%=project.images[0]%>" alt="obrazok projektu">
+            <div class="card-content">
+              <h2 class="card-header">
+                <%=project.name%>
+              </h2>
+              <p class="card-text">
+                <%=project.description%>
+              </p>
+            </div>
+          </div>
+        </div>
+      </a>
+      <% } %>
+    </div>
+  </div>
+
+  <div class="section" data-type="architecture">
+    <div class="grid">
+      <% for (let project of architectureProjects) { %>
+      <a href="/sk/projects/<%=project._id%>" class="hidden">
+        <div class="grid-item">
+          <div class="card">
+            <img class="card-img" src="/uploads/<%=project.images[0]%>" alt="obrazok projektu">
+            <div class="card-content">
+              <h2 class="card-header">
+                <%=project.name%>
+              </h2>
+              <p class="card-text">
+                <%=project.description%>
+              </p>
+            </div>
+          </div>
+        </div>
+      </a>
+      <% } %>
+    </div>
+  </div>
+
+  <div class="section" data-type="visualisation">
+    <div class="grid">
+      <% for (let project of visualisationProjects) { %>
+      <a href="/sk/projects/<%=project._id%>" class="hidden">
         <div class="grid-item">
           <div class="card">
             <img class="card-img" src="/uploads/<%=project.images[0]%>" alt="obrazok projektu">
