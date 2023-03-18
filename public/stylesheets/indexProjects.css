@@ -29,7 +29,7 @@ header {
 
 .grid-item {
     background-color: #ececec;
-    border-radius: 0.7rem;
+    /* border-radius: 0.7rem; */
     overflow: hidden;
     cursor: pointer;
     transition: 0.2s;
