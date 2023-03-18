@@ -114,6 +114,12 @@ main {
     color:#666;
 }
 
+.fixed-footer {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}
+
 @media (max-width: 1200px) {
     p.about-artroom {
         width: 80%;
