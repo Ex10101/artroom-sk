@@ -63,6 +63,7 @@ span {
     margin: 10px;
     font-size: 10px;
     text-align: center;
+    color: rgb(212, 212, 212);
 }
 
 .working-hours p:last-child {
