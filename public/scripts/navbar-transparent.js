@@ -1,5 +1,5 @@
 const navbar = document.querySelector('header');
-const selector = document.querySelector('select')
+const selector = document.querySelector('select');
 
 window.addEventListener('scroll', function () {
     const scrolled = window.scrollY;
