@@ -35,7 +35,16 @@
     </div>
     <div>
       <label for="projectImage">Images</label>
-      <input type="file" name="images" id="projectImage" value="<%= project.image %>" multiple>
+      <input type="file" name="images" id="projectImage" multiple>
+    </div>
+    <div class="container">
+      Existing Images (Mark to delete):
+      <% project.images.forEach((image, index) => { %>
+        <div  class="img-container">
+          <input type="checkbox" name="deleteImage<%= index %>" value="true">
+          <img src="/uploads/<%= image %>">
+        </div>
+      <% }) %>
     </div>
     <button>Submit</button>
   </form>

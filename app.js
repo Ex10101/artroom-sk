@@ -124,7 +124,7 @@ app.get('/admin', auth.requireAdmin, (req, res) => {
 })
 
 
-app.post('/projects', auth.requireAdmin, upload.array('images'), (req, res) => {
+app.post('/projects', auth.requireAdmin, upload.array('images'), async (req, res) => {
   const project = new Project(req.body.project);
   project.images = req.files.map(f => (f.filename));
   project.images.sort((a, b) => {
@@ -137,8 +137,7 @@ app.post('/projects', auth.requireAdmin, upload.array('images'), (req, res) => {
       return a.localeCompare(b);
     }
   });
-  console.log(project.images);
-  project.save()
+  await project.save()
     .then(() => res.redirect('/projects'))
     .catch(error => console.error(error));
 });
@@ -169,7 +168,19 @@ app.get('/projects/:id/edit', auth.requireAdmin, async (req, res, next) => {
 app.post('/projects/:id/update', auth.requireAdmin, upload.array('images'), async (req, res, next) => {
   try {
     const project = await Project.findByIdAndUpdate(req.params.id, { ...req.body.project });
-    project.images = req.files.map(f => (f.filename));
+
+    const deletedImages = project.images.filter((_, index) => req.body[`deleteImage${index}`]);
+    project.images = project.images.filter((_, index) => !req.body[`deleteImage${index}`]);
+
+    deletedImages.forEach(image => {
+      const imagePath = path.join(__dirname, 'public', 'uploads', image);
+      fs.unlinkSync(imagePath);
+    });
+
+    if (req.files.length > 0) {
+      project.images = project.images.concat(req.files.map(f => (f.filename)));
+    }
+
     project.images.sort((a, b) => {
       const regex = /(\d+)/g;
       const aName = a.match(regex)[0];
@@ -180,6 +191,7 @@ app.post('/projects/:id/update', auth.requireAdmin, upload.array('images'), asyn
         return a.localeCompare(b);
       }
     });
+
     await project.save();
     res.redirect('/projects');
   } catch (e) {

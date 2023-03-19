@@ -95,3 +95,23 @@ input[type="file"]::-webkit-file-upload-button:hover {
 input[type="file"]::-webkit-file-upload-button:active {
     background-color: #060132;
 }
+
+img {
+    width: 70%;
+    height: auto;
+    margin: 10px;
+}
+
+.img-container {
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid black;
+    margin: 5px;
+}
+
+.container {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
