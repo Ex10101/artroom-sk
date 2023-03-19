@@ -52,7 +52,8 @@ span {
 }
 
 .contact-info a {
-    color: #fff;
+    color: #000000;
+    border-bottom: 1px solid rgb(0, 0, 0);
 }
 
 .copyright {
