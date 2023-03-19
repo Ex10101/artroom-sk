@@ -68,7 +68,11 @@
 
     <div class="projectDescription">
       <span id="projectDescription">
-        <%= project.description %>
+        <% if (project.slovakDescription) { %>
+          <%= project.slovakDescription %>
+        <% } else { %>
+          <%= project.description %>
+        <% } %>
       </span>
     </div>
 
