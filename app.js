@@ -127,6 +127,17 @@ app.get('/admin', auth.requireAdmin, (req, res) => {
 app.post('/projects', auth.requireAdmin, upload.array('images'), (req, res) => {
   const project = new Project(req.body.project);
   project.images = req.files.map(f => (f.filename));
+  project.images.sort((a, b) => {
+    const regex = /(\d+)/g;
+    const aName = a.match(regex)[0];
+    const bName = b.match(regex)[0];
+    if (a.replace(regex, '') === b.replace(regex, '')) {
+      return aName - bName;
+    } else {
+      return a.localeCompare(b);
+    }
+  });
+  console.log(project.images);
   project.save()
     .then(() => res.redirect('/projects'))
     .catch(error => console.error(error));
@@ -159,6 +170,16 @@ app.post('/projects/:id/update', auth.requireAdmin, upload.array('images'), asyn
   try {
     const project = await Project.findByIdAndUpdate(req.params.id, { ...req.body.project });
     project.images = req.files.map(f => (f.filename));
+    project.images.sort((a, b) => {
+      const regex = /(\d+)/g;
+      const aName = a.match(regex)[0];
+      const bName = b.match(regex)[0];
+      if (a.replace(regex, '') === b.replace(regex, '')) {
+        return aName - bName;
+      } else {
+        return a.localeCompare(b);
+      }
+    });
     await project.save();
     res.redirect('/projects');
   } catch (e) {
