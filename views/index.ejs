@@ -117,9 +117,9 @@
 
   <h2 id="works-header">SOME OF OUR WORKS</h1>
   <div id="works-showbanner" class="hidden slow">
-    <% const project1 = projects[0] %>
-    <% const project2 = projects[1] %>
-    <% const project3 = projects[2] %>
+    <% const project1 = projects[projects.length-3] %>
+    <% const project2 = projects[projects.length-2] %>
+    <% const project3 = projects[projects.length-1] %>
     <div class="works-project">
       <a href="/projects/<%= project1._id %>"><img src="/uploads/<%= project1.images[0] %>" alt="Artroom design project"></a>
       <div class="works-name">
