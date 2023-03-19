@@ -99,7 +99,7 @@ select option {
         width: 30px;
         margin: 6px 0;
         height: 2px;
-        background: white;
+        background: black;
     }
 
     #navbar {
@@ -109,7 +109,7 @@ select option {
         right: 0;
         width: 100vw;
         height: 0px;
-        background: #22222e;
+        background: white;
         transition: 0.2s;
         overflow: hidden;
         z-index: 100;
@@ -117,6 +117,7 @@ select option {
 
     #navbar.active {
         height: 400px;
+        border-bottom: 1px solid black;
     }
 
     #navbar.active ul {
