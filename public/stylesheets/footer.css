@@ -1,9 +1,10 @@
 footer {
     text-align: center;
     /* we might get rid of this line in the future */
-    background-color: #22222e;
-    color: #808080;
+    background-color: #ffffff;
+    color: #000000;
     padding: 20px 0;
+    border-top: 0.15rem solid rgb(247, 245, 245);
 }
 
 h1,
@@ -40,6 +41,7 @@ span {
     font-size: 20px;
     font-weight: bold;
     margin-bottom: 20px;
+    margin-top: 20px;
 }
 
 .contact-info p,
@@ -54,7 +56,7 @@ span {
 }
 
 .copyright {
-    background-color: rgb(55, 55, 55);
+    background-color: rgb(247, 245, 245);
     display: flex;
     justify-content: center;
 }
@@ -63,7 +65,7 @@ span {
     margin: 10px;
     font-size: 10px;
     text-align: center;
-    color: rgb(212, 212, 212);
+    color: rgb(81, 81, 81);
 }
 
 .working-hours p:last-child {
