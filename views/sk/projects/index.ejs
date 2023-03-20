@@ -64,7 +64,7 @@
       <button class="filter-button active" data-type="design">Dizajn</button>
     </div>
   </div>
-  
+
   <div class="section" data-type="design">
     <div class="grid">
       <% for (let project of designProjects) { %>
@@ -73,9 +73,15 @@
           <div class="card">
             <img class="card-img" src="/uploads/<%=project.images[0]%>" alt="obrazok projektu">
             <div class="card-content">
-              <h2 class="card-header">
-                <%=project.name%>
-              </h2>
+                <% if (project.skName) { %>
+                <h2 class="card-header">
+                  <%= project.skName %>
+                </h2>
+                <% } else { %>
+                <h2 class="card-header">
+                  <%= project.name %>
+                </h2>
+                <% } %>
               <p class="card-text">
                 <%=project.description%>
               </p>
@@ -95,9 +101,15 @@
           <div class="card">
             <img class="card-img" src="/uploads/<%=project.images[0]%>" alt="obrazok projektu">
             <div class="card-content">
-              <h2 class="card-header">
-                <%=project.name%>
-              </h2>
+              <% if (project.skName) { %>
+                <h2 class="card-header">
+                  <%= project.skName %>
+                </h2>
+                <% } else { %>
+                <h2 class="card-header">
+                  <%= project.name %>
+                </h2>
+                <% } %>
               <p class="card-text">
                 <%=project.description%>
               </p>
@@ -117,9 +129,15 @@
           <div class="card">
             <img class="card-img" src="/uploads/<%=project.images[0]%>" alt="obrazok projektu">
             <div class="card-content">
-              <h2 class="card-header">
-                <%=project.name%>
-              </h2>
+              <% if (project.skName) { %>
+                <h2 class="card-header">
+                  <%= project.skName %>
+                </h2>
+                <% } else { %>
+                <h2 class="card-header">
+                  <%= project.name %>
+                </h2>
+                <% } %>
               <p class="card-text">
                 <%=project.description%>
               </p>
@@ -155,7 +173,7 @@
       Všetky vizuálne materiály na webovej stránke patria architektonickému štúdiu ARTROOM.
       Kopírovanie akýchkoľvek materiálov tretími stranami bez písomného povolenia je zakázané. </p>
   </div>
-  
+
   <script src="/scripts/language.js"></script>
   <script src="/scripts/navbar-transparent.js"></script>
   <script src="/scripts/navbar.js"></script>
