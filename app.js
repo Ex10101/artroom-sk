@@ -17,6 +17,7 @@ const slovakRoutes = require('./routes/sk');
 const dbUrl = process.env.DB_URL;
 const MongoStore = require('connect-mongo');
 const updateProject = require('./public/scripts/updateProject');
+const deleteProject = require('./public/scripts/deleteProject');
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
@@ -167,28 +168,7 @@ app.get('/projects/:id/edit', auth.requireAdmin, async (req, res, next) => {
 
 app.post('/projects/:id/update', auth.requireAdmin, upload.array('images'), updateProject);
 
-app.post('/projects/:id/delete', auth.requireAdmin, async (req, res, next) => {
-  try {
-    const deletedProject = await Project.findByIdAndDelete(req.params.id);
-    if (!deletedProject) {
-      res.status(404).send('Project not found');
-      return;
-    }
-
-    deletedProject.images.forEach((filename) => {
-      const imagePath = path.join(__dirname, 'public', 'uploads', filename);
-      fs.unlink(imagePath, (err) => {
-        if (err) {
-          console.error(err);
-        }
-      });
-    });
-
-    res.redirect('/projects');
-  } catch (err) {
-    next(err);
-  }
-});
+app.post('/projects/:id/delete', auth.requireAdmin, deleteProject);
 
 app.get('/prices', (req, res) => {
   res.render('prices');
