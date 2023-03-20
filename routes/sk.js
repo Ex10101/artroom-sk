@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const session = require('express-session')
 const Project = require('../models/project');
 
 router.get('/', async (req, res, next) => {
@@ -29,15 +30,15 @@ router.get('/projects', async (req, res, next) => {
     }
 });
 
-// router.get('/projects/:id', async (req, res, next) => {
-//     try {
-//         const admin = req.session.admin;
-//         const project = await Project.findById(req.params.id);
-//         res.render('sk/projects/show', { project, admin });
-//     } catch (err) {
-//         next(err);
-//     }
-// });
+router.get('/projects/:id', async (req, res, next) => {
+    try {
+        const admin = req.session.admin;
+        const project = await Project.findById(req.params.id);
+        res.render('sk/projects/show', { project, admin });
+    } catch (err) {
+        next(err);
+    }
+});
 
 router.get('/prices', (req, res) => {
     res.render('sk/prices');

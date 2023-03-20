@@ -13,8 +13,8 @@ const path = require('path');
 const fs = require('fs');
 const auth = require('./middleware/auth');
 const helmet = require("helmet");
-const session = require('express-session');
 const slovakRoutes = require('./routes/sk');
+const session = require('express-session');
 const MongoStore = require('connect-mongo');
 
 const updateProject = require('./public/scripts/updateProject');
@@ -34,20 +34,13 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage: storage });
 
-app.use(helmet());
-app.use(express.urlencoded({ extended: true }));
-app.use(methodOverride('_method'));
-app.use(express.static('public'));
-app.use('/sk', slovakRoutes);
-
 const store = MongoStore.create({
   mongoUrl: dbUrl,
   touchAfter: 24 * 60 * 60,
   crypto: {
-      secret: 'skibidiyes'
+    secret: 'skibidiyes'
   }
 });
-
 app.use(session({
   store,
   secret: process.env.SECRET,
@@ -55,8 +48,14 @@ app.use(session({
   saveUninitialized: true,
 }));
 
-app.set('view engine', 'ejs');
+app.use(helmet());
+app.use(express.urlencoded({ extended: true }));
+app.use(methodOverride('_method'));
+app.use(express.static('public'));
+app.use('/sk', slovakRoutes);
 
+
+app.set('view engine', 'ejs');
 
 // Connection
 mongoose.connect(dbUrl)
@@ -82,16 +81,6 @@ app.get('/', async (req, res, next) => {
     res.render('index', { projects });
   } catch (e) {
     next(e)
-  }
-});
-
-app.get('/sk/projects/:id', async (req, res, next) => {
-  try {
-      const admin = req.session.admin;
-      const project = await Project.findById(req.params.id);
-      res.render('sk/projects/show', { project, admin });
-  } catch (err) {
-      next(err);
   }
 });
 
