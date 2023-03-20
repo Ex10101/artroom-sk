@@ -1,6 +1,7 @@
 const Project = require('../../models/project');
 
 module.exports = async function createProject(req, res, next) {
+    try {
     const project = new Project(req.body.project);
     project.images = req.files.map(f => (f.filename));
     project.images.sort((a, b) => {
@@ -13,7 +14,6 @@ module.exports = async function createProject(req, res, next) {
             return a.localeCompare(b);
         }
     });
-    try {
         await project.save();
         res.redirect('/projects');
     } catch (err) {
