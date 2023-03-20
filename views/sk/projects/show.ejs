@@ -60,10 +60,25 @@
   </div>
 
   <div class="content-container">
+
     <div class="projectName">
       <span id="projectName">
         <%= project.name %>
       </span>
+    </div>
+
+    <% if (project.slovakShortDescription) { %>
+    <div class="projectDescription">
+      <pre id="projectShortDescription">
+          <%= project.shortSkDescription %>
+      </pre>
+    </div>
+    <% } %>
+
+    <div class="pictures-container">
+      <% for (let image of project.images) { %>
+      <div class="picture"><a href="/uploads/<%= image %>" data-lightbox="gallery"><img src="/uploads/<%= image %>" alt="Obrazok projektu"></a></div>
+      <% } %>
     </div>
 
     <div class="projectDescription">
@@ -75,13 +90,10 @@
         <% } %>
         </pre>
     </div>
-
-    <div class="pictures-container">
-      <% for (let image of project.images) { %>
-      <div class="picture"><a href="/uploads/<%= image %>" data-lightbox="gallery"><img src="/uploads/<%= image %>" alt="Obrazok projektu"></a></div>
-      <% } %>
-    </div>
+    
   </div>
+
+  
 
   <% if (admin) { %>
   <a href="/projects/<%= project._id %>/edit" class="edit-link">Edit project</a>

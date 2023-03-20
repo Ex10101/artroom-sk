@@ -26,12 +26,20 @@
       <textarea name="project[slovakDescription]" id="projectSlovakDescription" cols="30" rows="10"><%= project.slovakDescription %></textarea>
     </div>
     <div>
-        <label for="projectType">Type</label>
-        <select name="project[type]" id="projectType" required>
-          <option value="Visualisation">Visualisation</option>
-          <option value="Architecture">Architecture</option>
-          <option value="Design">Design</option>
-        </select>
+      <label for="projectShortDescription">Short Description</label>
+      <textarea name="project[shortDescription]" id="projectShortDescription" cols="30" rows="5"><%= project.shortDescription %></textarea>
+    </div>
+    <div>
+      <label for="projectShortSlovakDescription">Short Slovak Description</label>
+      <textarea name="project[shortSkDescription]" id="projectShortSlovakDescription" cols="30" rows="5"><%= project.shortSkDescription %></textarea>
+    </div>
+    <div>
+      <label for="projectType">Type</label>
+      <select name="project[type]" id="projectType" required>
+        <option value="Visualisation" <% if (project.type === 'Visualisation') { %>selected<% } %>>Visualisation</option>
+        <option value="Architecture" <% if (project.type === 'Architecture') { %>selected<% } %>>Architecture</option>
+        <option value="Design" <% if (project.type === 'Design') { %>selected<% } %>>Design</option>
+      </select>
     </div>
     <div>
       <label for="projectImage">Images</label>

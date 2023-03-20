@@ -4,6 +4,8 @@ const projectSchema = new mongoose.Schema({
   name: { type: String, required: true },
   description: { type: String, required: true },
   slovakDescription: { type: String, required: false },
+  shortDescription: { type: String, required: false },
+  shortSkDescription: { type: String, required: false },
   type: { 
     type: String, 
     enum: ['Visualisation', 'Architecture', 'Design'], 

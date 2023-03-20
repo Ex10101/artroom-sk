@@ -66,16 +66,24 @@
       </span>
     </div>
 
+    <% if (project.shortDescription) { %>
     <div class="projectDescription">
-      <pre id="projectDescription">
-        <%= project.description %>
+      <pre id="shortDescription">
+        <%= project.shortDescription %>
       </pre>
     </div>
+    <% } %>
 
     <div class="pictures-container">
       <% for (let image of project.images) { %>
       <div class="picture"><a href="/uploads/<%= image %>" data-lightbox="gallery"><img src="/uploads/<%= image %>" alt="Project image" class="project-image"></a></div>
       <% } %>
+    </div>
+
+    <div class="projectDescription">
+      <pre id="projectDescription">
+        <%= project.description %>
+      </pre>
     </div>
   </div>
 
