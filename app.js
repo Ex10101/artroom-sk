@@ -18,6 +18,7 @@ const dbUrl = process.env.DB_URL;
 const MongoStore = require('connect-mongo');
 const updateProject = require('./public/scripts/updateProject');
 const deleteProject = require('./public/scripts/deleteProject');
+const createProject = require('./public/scripts/createProject');
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
@@ -125,23 +126,7 @@ app.get('/admin', auth.requireAdmin, (req, res) => {
 })
 
 
-app.post('/projects', auth.requireAdmin, upload.array('images'), async (req, res) => {
-  const project = new Project(req.body.project);
-  project.images = req.files.map(f => (f.filename));
-  project.images.sort((a, b) => {
-    const regex = /(\d+)/g;
-    const aName = a.match(regex)[0];
-    const bName = b.match(regex)[0];
-    if (a.replace(regex, '') === b.replace(regex, '')) {
-      return aName - bName;
-    } else {
-      return a.localeCompare(b);
-    }
-  });
-  await project.save()
-    .then(() => res.redirect('/projects'))
-    .catch(error => console.error(error));
-});
+app.post('/projects', auth.requireAdmin, upload.array('images'), createProject);
 
 app.get('/projects/new', auth.requireAdmin, (req, res) => {
   res.render('projects/new');
