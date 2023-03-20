@@ -142,6 +142,7 @@ app.get('/projects/:id', async (req, res, next) => {
     res.render('projects/show', { project, admin });
   } catch (err) {
     next(err);
+    console.log(err);
   }
 })
 

@@ -62,27 +62,27 @@
   <div class="content-container">
 
     <% if (project.skName) { %>
-    <div class="projectName">
-      <span id="projectName">
-        <%= project.skName %>
-      </span>
-    </div>
+      <div class="projectName">
+        <span id="projectName">
+          <%= project.skName %>
+        </span>
+      </div>
+  
+      <% } else { %>
+      <div class="projectName">
+        <span id="projectName">
+          <%= project.name %>
+        </span>
+      </div>
+      <% } %>
 
-    <% } else { %>
-    <div class="projectName">
-      <span id="projectName">
-        <%= project.name %>
-      </span>
-    </div>
-    <% } %>
-
-    <% if (project.slovakShortDescription) { %>
-    <div class="projectDescription">
-      <pre id="projectShortDescription">
-          <%= project.shortSkDescription %>
-      </pre>
-    </div>
-    <% } %>
+    <% if (project.shortSkDescription) { %>
+      <div class="projectDescription">
+        <pre id="projectShortDescription">
+            <%= project.shortSkDescription %>
+        </pre>
+      </div>
+      <% } %>
 
     <div class="pictures-container">
       <% for (let image of project.images) { %>
@@ -102,19 +102,14 @@
 
   </div>
 
-
-
   <% if (admin) { %>
-  <div class="admin-buttons">
-    <a href="/projects/<%= project._id %>/edit" class="edit-link">Edit project</a>
-    <form action="/projects/<%= project._id %>/delete" method="POST" class="delete-form">
-      <button type="submit" class="delete-button">Delete Project</button>
-    </form>
-  </div>
-  <% } %>
-
-
-
+    <div class="admin-buttons">
+      <a href="/projects/<%= project._id %>/edit" class="edit-link">Edit project</a>
+      <form action="/projects/<%= project._id %>/delete" method="POST" class="delete-form">
+        <button type="submit" class="delete-button">Delete Project</button>
+      </form>
+    </div>
+    <% } %>
 
   <footer>
     <div class="footer">
