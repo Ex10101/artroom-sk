@@ -4,6 +4,7 @@ if (process.env.NODE_ENV !== "production") {
 
 const express = require('express');
 const app = express();
+
 const mongoose = require('mongoose');
 const methodOverride = require('method-override');
 const Project = require('./models/project');
@@ -14,11 +15,13 @@ const auth = require('./middleware/auth');
 const helmet = require("helmet");
 const session = require('express-session');
 const slovakRoutes = require('./routes/sk');
-const dbUrl = process.env.DB_URL;
 const MongoStore = require('connect-mongo');
+
 const updateProject = require('./public/scripts/updateProject');
 const deleteProject = require('./public/scripts/deleteProject');
 const createProject = require('./public/scripts/createProject');
+
+const dbUrl = process.env.DB_URL;
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
@@ -35,6 +38,7 @@ app.use(helmet());
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
 app.use(express.static('public'));
+app.use('/sk', slovakRoutes);
 
 const store = MongoStore.create({
   mongoUrl: dbUrl,
@@ -50,7 +54,6 @@ app.use(session({
   resave: false,
   saveUninitialized: true,
 }));
-app.use('/sk', slovakRoutes);
 
 app.set('view engine', 'ejs');
 

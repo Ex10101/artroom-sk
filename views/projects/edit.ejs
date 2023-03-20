@@ -11,16 +11,21 @@
 </head>
 
 <body>
+
   <h1>Edit a Project</h1>
+
   <form action="/projects/<%= project._id %>/update" method="POST" enctype="multipart/form-data">
+
     <div>
       <label for="projectName">Project Name</label>
       <input type="text" name="project[name]" id="projectName" value="<%= project.name %>">
     </div>
+
     <div>
       <label for="skName">Slovak Name</label>
       <input type="text" name="project[skName]" id="skName" value="<%= project.skName %>">
     </div>
+
     <div>
       <label for="projectDescription">Description</label>
       <textarea name="project[description]" id="projectDescription" cols="30" rows="10"><%= project.description %></textarea>
@@ -29,14 +34,17 @@
       <label for="projectSlovakDescription">Slovak Description</label>
       <textarea name="project[slovakDescription]" id="projectSlovakDescription" cols="30" rows="10"><%= project.slovakDescription %></textarea>
     </div>
+
     <div>
       <label for="projectShortDescription">Short Description</label>
       <textarea name="project[shortDescription]" id="projectShortDescription" cols="30" rows="5"><%= project.shortDescription %></textarea>
     </div>
+
     <div>
       <label for="projectShortSlovakDescription">Short Slovak Description</label>
       <textarea name="project[shortSkDescription]" id="projectShortSlovakDescription" cols="30" rows="5"><%= project.shortSkDescription %></textarea>
     </div>
+
     <div>
       <label for="projectType">Type</label>
       <select name="project[type]" id="projectType" required>
@@ -45,21 +53,26 @@
         <option value="Design" <% if (project.type === 'Design') { %>selected<% } %>>Design</option>
       </select>
     </div>
+
     <div>
       <label for="projectImage">Images</label>
       <input type="file" name="images" id="projectImage" multiple>
     </div>
+
     <div class="container">
       Existing Images (Mark to delete):
       <% project.images.forEach((image, index) => { %>
-        <div  class="img-container">
-          <input type="checkbox" name="deleteImage<%= index %>" value="true">
-          <img src="/uploads/<%= image %>">
-        </div>
+      <div class="img-container">
+        <input type="checkbox" name="deleteImage<%= index %>" value="true">
+        <img src="/uploads/<%= image %>">
+      </div>
       <% }) %>
     </div>
+
     <button>Submit</button>
+
   </form>
+
 </body>
 
 </html>
