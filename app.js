@@ -85,6 +85,16 @@ app.get('/', async (req, res, next) => {
   }
 });
 
+app.get('/sk/projects/:id', async (req, res, next) => {
+  try {
+      const admin = req.session.admin;
+      const project = await Project.findById(req.params.id);
+      res.render('sk/projects/show', { project, admin });
+  } catch (err) {
+      next(err);
+  }
+});
+
 app.get('/projects', async (req, res, next) => {
   try {
     const architectureProjects = await Project.find({ type: 'Architecture' });

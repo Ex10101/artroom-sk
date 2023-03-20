@@ -67,7 +67,6 @@
           <%= project.skName %>
         </span>
       </div>
-  
       <% } else { %>
       <div class="projectName">
         <span id="projectName">
@@ -75,7 +74,6 @@
         </span>
       </div>
       <% } %>
-
     <% if (project.shortSkDescription) { %>
       <div class="projectDescription">
         <pre id="projectShortDescription">
@@ -83,7 +81,6 @@
         </pre>
       </div>
       <% } %>
-
     <div class="pictures-container">
       <% for (let image of project.images) { %>
       <div class="picture"><a href="/uploads/<%= image %>" data-lightbox="gallery"><img src="/uploads/<%= image %>" alt="Obrazok projektu"></a></div>
