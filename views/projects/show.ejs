@@ -88,10 +88,12 @@
   </div>
 
   <% if (admin) { %>
-  <a href="/projects/<%= project._id %>/edit" class="edit-link">Edit project</a>
-  <form action="/projects/<%= project._id %>/delete" method="POST" class="delete-form">
-    <button type="submit" class="delete-button">Delete Project</button>
-  </form>
+    <div class="admin-buttons">
+      <a href="/projects/<%= project._id %>/edit" class="edit-link">Edit project</a>
+      <form action="/projects/<%= project._id %>/delete" method="POST" class="delete-form">
+        <button type="submit" class="delete-button">Delete Project</button>
+      </form>
+    </div>
   <% } %>
 
 
