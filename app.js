@@ -2,7 +2,6 @@ if (process.env.NODE_ENV !== "production") {
   require('dotenv').config();
 }
 
-
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
@@ -17,6 +16,7 @@ const session = require('express-session');
 const slovakRoutes = require('./routes/sk');
 const dbUrl = process.env.DB_URL;
 const MongoStore = require('connect-mongo');
+const updateProject = require('./public/scripts/updateProject');
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
@@ -165,39 +165,7 @@ app.get('/projects/:id/edit', auth.requireAdmin, async (req, res, next) => {
   }
 })
 
-app.post('/projects/:id/update', auth.requireAdmin, upload.array('images'), async (req, res, next) => {
-  try {
-    const project = await Project.findByIdAndUpdate(req.params.id, { ...req.body.project });
-
-    const deletedImages = project.images.filter((_, index) => req.body[`deleteImage${index}`]);
-    project.images = project.images.filter((_, index) => !req.body[`deleteImage${index}`]);
-
-    deletedImages.forEach(image => {
-      const imagePath = path.join(__dirname, 'public', 'uploads', image);
-      fs.unlinkSync(imagePath);
-    });
-
-    if (req.files.length > 0) {
-      project.images = project.images.concat(req.files.map(f => (f.filename)));
-    }
-
-    project.images.sort((a, b) => {
-      const regex = /(\d+)/g;
-      const aName = a.match(regex)[0];
-      const bName = b.match(regex)[0];
-      if (a.replace(regex, '') === b.replace(regex, '')) {
-        return aName - bName;
-      } else {
-        return a.localeCompare(b);
-      }
-    });
-
-    await project.save();
-    res.redirect('/projects');
-  } catch (e) {
-    next(e)
-  }
-})
+app.post('/projects/:id/update', auth.requireAdmin, upload.array('images'), updateProject);
 
 app.post('/projects/:id/delete', auth.requireAdmin, async (req, res, next) => {
   try {
