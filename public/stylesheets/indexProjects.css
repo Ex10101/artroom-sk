@@ -101,12 +101,12 @@ footer {
     margin-bottom: 30px;
     right: 50%;
     left: 50%;
-    top: 30px;
-    position: fixed;
+    top: 40px;
+    position: absolute;
     z-index: 2;
 }
 
-.filter-button {
+/* .filter-button {
     padding: 10px 20px;
     margin: 0 5px;
     font-size: 16px;
@@ -136,11 +136,70 @@ footer {
 .filter-button:focus {
     outline: none;
     box-shadow: 0 0 0 3px rgba(34, 34, 46, 0.2);
-}
+} */
 
 .navleg {
     height: 60px;
 }
+
+.filter-line-left {
+    width: 35vw;
+    height: 2px;
+    border: 1px solid black;
+    display: inline-block;
+    position: absolute;
+    z-index: 2;
+    left: 0vw;
+    top: 100px;
+}
+.filter-line-right {
+    width: 35vw;
+    height: 2px;
+    border: 1px solid black;
+    display: inline-block;
+    position: absolute;
+    z-index: 2;
+    right: 0vw;
+    top: 100px;
+}
+
+
+
+.filter-buttons a {
+    color: black;
+    text-align: center;
+    display: inline-block;
+    position: relative; 
+    padding: 10px 25px;
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0 11px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.filter-buttons a::after {
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 2px;
+    left: 50%;
+    position: absolute;
+    background: black;
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+}
+.filter-buttons a.active::after {
+    width: 60%;
+    left: 20%;
+}
+.filter-buttons a:hover::after {
+    width: 60%; 
+    left: 20%; 
+}
+
+
+
 
 @media (max-width: 660px) {
     .grid-item {
@@ -184,12 +243,27 @@ footer {
     }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1300px) {
     .grid-item {
         width: 55rem;
     }
 }
-
+@media (max-width: 1300px) {
+    .filter-line-left {
+        width: 27vw;
+    }
+    .filter-line-right {
+        width: 27vw;
+    }
+}
+@media (max-width: 1000px) {
+    .filter-line-left {
+        width: 20vw;
+    }
+    .filter-line-right {
+        width: 20vw;
+    }
+}
 @media (min-width: 1600px) {
     .grid-item {
         width: 55rem;

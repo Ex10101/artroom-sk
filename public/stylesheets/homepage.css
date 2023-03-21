@@ -69,6 +69,10 @@ header {
     font-size: 15px;
     margin-bottom: 20px;
 }
+#g-banner-text pre {
+    white-space: pre-line;
+    text-align: center;
+}
 
 
 #advantages-header {
@@ -79,7 +83,7 @@ header {
 
 #advantages-grid {
     display: flex;
-    padding: 100px 0 100px 0;
+    padding: 100px 100px 100px 100px;
     justify-content: center;
     flex-wrap: wrap;
     border-bottom: 2px solid black;
@@ -91,7 +95,7 @@ header {
     flex-direction: column;
     align-items: center;
     width: 300px;
-    margin: 50px 50px;
+    margin: 50px 25px;
 }
 
 .advantages-item img {

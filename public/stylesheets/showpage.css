@@ -115,7 +115,7 @@ header {
 }
 
 pre {
-    white-space: pre-wrap;
+    white-space: pre-line;
 }
 
 .admin-buttons {
