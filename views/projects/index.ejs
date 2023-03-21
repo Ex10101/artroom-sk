@@ -81,17 +81,17 @@
 
   <div class="section" data-type="design">
     <div class="grid">
-      <% for (let project of designProjects) { %>
-        <a href="/projects/<%=project._id%>" class="hidden">
+      <% for (let i = designProjects.length-1; i >= 0; i--) { %>
+        <a href="/projects/<%=designProjects[i]._id%>" class="hidden">
           <div class="grid-item">
             <div class="card">
-              <img class="card-img" src="/uploads/<%=project.images[0]%>" alt="project image">
+              <img class="card-img" src="/uploads/<%=designProjects[i].images[0]%>" alt="project image">
               <div class="card-content">
                 <h2 class="card-header">
-                  <%=project.name%>
+                  <%=designProjects[i].name%>
                 </h2>
                 <p class="card-text">
-                  <%=project.description%>
+                  <%=designProjects[i].description%>
                 </p>
               </div>
             </div>
@@ -103,17 +103,17 @@
 
   <div class="section" data-type="visualisation">
     <div class="grid">
-      <% for (let project of visualisationProjects) { %>
-        <a href="/projects/<%=project._id%>" class="hidden">
+      <% for (let i = visualisationProjects.length-1; i >= 0 ; i--) { %>
+        <a href="/projects/<%=visualisationProjects[i]._id%>" class="hidden">
           <div class="grid-item">
             <div class="card">
-              <img class="card-img" src="/uploads/<%=project.images[0]%>" alt="project image">
+              <img class="card-img" src="/uploads/<%=visualisationProjects[i].images[0]%>" alt="project image">
               <div class="card-content">
                 <h2 class="card-header">
-                  <%=project.name%>
+                  <%=visualisationProjects[i].name%>
                 </h2>
                 <p class="card-text">
-                  <%=project.description%>
+                  <%=visualisationProjects[i].description%>
                 </p>
               </div>
             </div>
@@ -125,17 +125,17 @@
 
   <div class="section" data-type="architecture">
     <div class="grid">
-      <% for (let project of architectureProjects) { %>
-        <a href="/projects/<%=project._id%>" class="hidden">
+      <% for (let i = architectureProjects.length-1; i >= 0; i--) { %>
+        <a href="/projects/<%=architectureProjects[i]._id%>" class="hidden">
           <div class="grid-item">
             <div class="card">
-              <img class="card-img" src="/uploads/<%=project.images[0]%>" alt="project image">
+              <img class="card-img" src="/uploads/<%=architectureProjects[i].images[0]%>" alt="project image">
               <div class="card-content">
                 <h2 class="card-header">
-                  <%=project.name%>
+                  <%=architectureProjects[i].name%>
                 </h2>
                 <p class="card-text">
-                  <%=project.description%>
+                  <%=architectureProjects[i].description%>
                 </p>
               </div>
             </div>
