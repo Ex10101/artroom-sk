@@ -75,6 +75,8 @@ app.use(express.urlencoded({ extended: true }));
 app.set('view engine', 'ejs');
 
 
+
+
 app.get('/', async (req, res, next) => {
   try {
     const projects = await Project.find({});
