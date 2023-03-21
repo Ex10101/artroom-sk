@@ -69,6 +69,10 @@ header {
     font-size: 15px;
     margin-bottom: 20px;
 }
+#g-banner-text pre {
+    white-space: pre-line;
+    text-align: center;
+}
 
 
 #advantages-header {
