@@ -69,6 +69,7 @@ header {
     font-size: 15px;
     margin-bottom: 20px;
 }
+
 #g-banner-text pre {
     white-space: pre-line;
     text-align: center;
@@ -174,18 +175,20 @@ header {
 #contacts-link a {
     display: block;
     text-align: center;
-    background-color: #22222e;
-    color: white;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
     padding: 25px;
     width: 200px;
     margin: 35px auto;
     border-radius: 50px;
     transition: 0.7s;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
 #contacts-link a:hover {
     width: 250px;
-    background-color: #5c5b5b;
+    background-color: #e1e1e1;
+    color: rgb(0, 0, 0);
 }
 
 
