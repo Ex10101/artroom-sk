@@ -15,7 +15,7 @@
 
 .prices {
     animation: 1s ease-out 0s 1 fadeIn;
-    max-width: 1300px;
+    max-width: 1600px;
     margin: 80px auto;
     display: flex;
     flex-wrap: nowrap;
@@ -31,7 +31,7 @@
 
 .price {
     width: 800px;
-    height: 540px;
+    /* height: 540px; */
     background-color: #ececec;
     border-radius: 5px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -39,7 +39,6 @@
     padding: 20px;
     text-align: center;
     position: relative;
-    cursor: pointer;
 }
 
 .price h2 {
@@ -61,29 +60,15 @@
 .price ul {
     list-style: none;
     margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
 }
 
 .price ul li {
-    margin: 10px 0;
+    margin: 15px 20px;
     font-size: 16px;
     color: #444;
     transition: .3s;
-}
-
-.price button {
-    width: 200px;
-    background-color: #22222e;
-    color: #fff;
-    padding: 10px 20px;
-    font-size: 16px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
 }
 
 .price button:hover {
@@ -110,18 +95,6 @@
     transform: scale(1.001);
 }
 
-.price:hover .price-cover {
-    transform: scale(1.02);
-}
-
-.price:hover h2 {
-    font-size: 30px;
-}
-
-.price:hover button {
-    width: 70%;
-}
-
 .active {
     z-index: 2;
 }
@@ -129,6 +102,17 @@
 #navbar {
     z-index: 2;
 }
+
+.row-2 {
+    border-left: 1px solid rgba(128, 128, 128, 0.235);
+}
+
+.row-1,
+.row-2 {
+    width: 50%;
+}
+
+
 
 @media only screen and (min-width: 1921px) {
     .prices {
@@ -144,18 +128,14 @@
         font-size: 16px;
     }
 
-    .price {
-        height: 600px;
-    }
-
     .fixed-footer {
-        position: absolute;
+        /* position: absolute; */
         width: 100%;
         bottom: 0;
     }
 }
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 1200px) {
     .price {
         width: 70%;
     }
@@ -166,9 +146,13 @@
     .price:hover button {
         width: 50%;
     }
+
+    .price ul li {
+        font-size: 12px;
+    }
 }
 @media (max-width: 400px) {
     .price ul li {
-        font-size: 14px;
+        font-size: 10px;
     }
 }
