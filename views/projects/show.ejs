@@ -18,6 +18,29 @@
   <title>
     <%= project.name %>
   </title>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org/",
+      "@type": "Article",
+      "headline": "<%= project.name %>",
+      "image": [
+        "artroom-sk.up.railway.app/uploads/<%= project.images[0] %>"
+       ],
+      "description": "<%= project.description %>",
+      "author": {
+        "@type": "Organization",
+        "name": "ARTROOM Architectural Studio"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "ARTROOM Architectural Studio",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "/staticImages/logo.png"
+        }
+      }
+    }
+    </script>
 </head>
 
 <body>
