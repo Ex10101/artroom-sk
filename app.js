@@ -84,6 +84,11 @@ app.get('/', async (req, res, next) => {
   }
 });
 
+app.get('/robots.txt', (req, res) => {
+  res.type('text/plain');
+  res.sendFile(path.join(__dirname, 'robots.txt'));
+});
+
 app.get('/projects', async (req, res, next) => {
   try {
     const architectureProjects = await Project.find({ type: 'Architecture' });
