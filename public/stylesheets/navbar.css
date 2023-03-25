@@ -24,7 +24,7 @@ header {
     z-index: 2;
 }
 
-#logo {
+#logo img {
     height: 31px;
 }
 
@@ -142,7 +142,6 @@ select option {
     }
 
     .artroom-logo {
-        width: 80%;
-        height: 80%;
+        height: 20px;
     }
 }

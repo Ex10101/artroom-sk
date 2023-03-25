@@ -62,25 +62,25 @@
   <div class="content-container">
 
     <% if (project.skName) { %>
-      <div class="projectName">
-        <span id="projectName">
-          <%= project.skName %>
-        </span>
-      </div>
-      <% } else { %>
-      <div class="projectName">
-        <span id="projectName">
-          <%= project.name %>
-        </span>
-      </div>
-      <% } %>
+    <div class="projectName">
+      <span id="projectName">
+        <%= project.skName %>
+      </span>
+    </div>
+    <% } else { %>
+    <div class="projectName">
+      <span id="projectName">
+        <%= project.name %>
+      </span>
+    </div>
+    <% } %>
     <% if (project.shortSkDescription) { %>
-      <div class="projectDescription">
-        <pre id="projectShortDescription">
+    <div class="projectDescription">
+      <pre id="projectShortDescription">
             <%= project.shortSkDescription %>
         </pre>
-      </div>
-      <% } %>
+    </div>
+    <% } %>
     <div class="pictures-container">
       <% for (let image of project.images) { %>
       <div class="picture"><a href="/uploads/<%= image %>" data-lightbox="gallery"><img src="/uploads/<%= image %>" alt="Obrazok projektu"></a></div>
@@ -100,24 +100,24 @@
   </div>
 
   <% if (admin) { %>
-    <div class="admin-buttons">
-      <a href="/projects/<%= project._id %>/edit" class="edit-link">Edit project</a>
-      <form action="/projects/<%= project._id %>/delete" method="POST" class="delete-form">
-        <button type="submit" class="delete-button">Delete Project</button>
-      </form>
-    </div>
-    <% } %>
+  <div class="admin-buttons">
+    <a href="/projects/<%= project._id %>/edit" class="edit-link">Edit project</a>
+    <form action="/projects/<%= project._id %>/delete" method="POST" class="delete-form">
+      <button type="submit" class="delete-button">Delete Project</button>
+    </form>
+  </div>
+  <% } %>
 
   <footer>
     <div class="footer">
       <div class="contact-info">
-        <h5>Kontaktné informácie:</h5>
+        <h3>Kontaktné informácie:</h3>
         <p class="address">Mozartova 4912/10,<br> 811 02 Bratislava - Stare Mesto</p>
         <p class="email">Email: <a href="mailto:artroom.box@gmail.com">artroom.box@gmail.com</a></p>
         <p class="phone-number">Telefónne číslo: +421 949 227 794</p>
       </div>
       <div class="working-hours">
-        <h5>Pracovné hodiny:</h5>
+        <h3>Pracovné hodiny:</h3>
         <p>Pondelok-Piatok - 10:00-18:00</p>
         <p>Sobota-Nedeľa - nepracujeme</p>
         <a href="https://www.facebook.com/artroom.by"><img src="/staticImages/facebook-logo.svg" alt="artroom-facebook" width="20px" height="20px" class="social-button"></a>
