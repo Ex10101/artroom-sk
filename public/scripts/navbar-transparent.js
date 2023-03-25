@@ -11,7 +11,7 @@ window.addEventListener('scroll', function () {
         // cюда пойдут стили, когда пользователь прокрутил страницу
     } else {
         navbar.style.backgroundColor = '#ffffff';
-        selector.style.color = '#929292';
+        selector.style.color = 'black';
         // сюда пойдут стили, когда пользователь на начале страницы
     }
 });
