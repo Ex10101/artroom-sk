@@ -41,6 +41,7 @@ const store = MongoStore.create({
     secret: 'skibidiyes'
   }
 });
+
 app.use(session({
   store,
   secret: process.env.SECRET,

@@ -216,6 +216,51 @@ header {
     #g-banner-text {
         width: 80%;
     }
+
+    #g-banner-text h2 {
+        font-size: 20px;
+    }
+
+    #g-banner-text pre {
+        font-size: 12px;
+    }
+
+    #advantages-header {
+        font-size: 20px;
+    }
+
+    .advantages-item h3 {
+        font-size: 14px;
+    }
+
+    .advantages-item {
+        margin: 30px 0;
+    }
+
+    .advantages-item p {
+        font-size: 12px;
+    }
+
+    #advantages-grid {
+        padding: 50px 50px 50px 50px;
+    }
+
+    #works-header {
+        font-size: 20px;
+        margin-top: 50px;
+    }
+
+    #contacts-link h2 {
+        font-size: 20px;
+    }
+
+    #advantages-header {
+        margin-top: 50px;
+    }
+
+    #gen-banner {
+        padding: 50px 0 50px 0;
+    }
 }
 
 @media (max-width: 700px) {
