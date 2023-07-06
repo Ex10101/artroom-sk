@@ -2,15 +2,25 @@
 <html lang="en">
 
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-J6Q98G1DS5"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'G-J6Q98G1DS5');
+  </script>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Here is the list of our recent projects. Make sure to check them out!">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&family=Montserrat:wght@400;700&family=Open+Sans:wght@400;700&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&family=Montserrat:wght@400;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/stylesheets/navbar.css">
   <link rel="stylesheet" href="/stylesheets/animations.css">
@@ -81,66 +91,66 @@
   <div class="section" data-type="design">
     <div class="grid">
       <% for (let i = designProjects.length-1; i >= 0; i--) { %>
-        <a href="/projects/<%=designProjects[i]._id%>" class="hidden">
-          <div class="grid-item">
-            <div class="card">
-              <img class="card-img" src="/uploads/<%=designProjects[i].images[0]%>" alt="project image">
-              <div class="card-content">
-                <h2 class="card-header">
-                  <%=designProjects[i].name%>
-                </h2>
-                <p class="card-text">
-                  <%=designProjects[i].description%>
-                </p>
-              </div>
+      <a href="/projects/<%=designProjects[i]._id%>" class="hidden">
+        <div class="grid-item">
+          <div class="card">
+            <img class="card-img" src="/uploads/<%=designProjects[i].images[0]%>" alt="project image">
+            <div class="card-content">
+              <h2 class="card-header">
+                <%=designProjects[i].name%>
+              </h2>
+              <p class="card-text">
+                <%=designProjects[i].description%>
+              </p>
             </div>
           </div>
-        </a>
-        <% } %>
+        </div>
+      </a>
+      <% } %>
     </div>
   </div>
 
   <div class="section" data-type="visualisation">
     <div class="grid">
       <% for (let i = visualisationProjects.length-1; i >= 0 ; i--) { %>
-        <a href="/projects/<%=visualisationProjects[i]._id%>" class="hidden">
-          <div class="grid-item">
-            <div class="card">
-              <img class="card-img" src="/uploads/<%=visualisationProjects[i].images[0]%>" alt="project image">
-              <div class="card-content">
-                <h2 class="card-header">
-                  <%=visualisationProjects[i].name%>
-                </h2>
-                <p class="card-text">
-                  <%=visualisationProjects[i].description%>
-                </p>
-              </div>
+      <a href="/projects/<%=visualisationProjects[i]._id%>" class="hidden">
+        <div class="grid-item">
+          <div class="card">
+            <img class="card-img" src="/uploads/<%=visualisationProjects[i].images[0]%>" alt="project image">
+            <div class="card-content">
+              <h2 class="card-header">
+                <%=visualisationProjects[i].name%>
+              </h2>
+              <p class="card-text">
+                <%=visualisationProjects[i].description%>
+              </p>
             </div>
           </div>
-        </a>
-        <% } %>
+        </div>
+      </a>
+      <% } %>
     </div>
   </div>
 
   <div class="section" data-type="architecture">
     <div class="grid">
       <% for (let i = architectureProjects.length-1; i >= 0; i--) { %>
-        <a href="/projects/<%=architectureProjects[i]._id%>" class="hidden">
-          <div class="grid-item">
-            <div class="card">
-              <img class="card-img" src="/uploads/<%=architectureProjects[i].images[0]%>" alt="project image">
-              <div class="card-content">
-                <h2 class="card-header">
-                  <%=architectureProjects[i].name%>
-                </h2>
-                <p class="card-text">
-                  <%=architectureProjects[i].description%>
-                </p>
-              </div>
+      <a href="/projects/<%=architectureProjects[i]._id%>" class="hidden">
+        <div class="grid-item">
+          <div class="card">
+            <img class="card-img" src="/uploads/<%=architectureProjects[i].images[0]%>" alt="project image">
+            <div class="card-content">
+              <h2 class="card-header">
+                <%=architectureProjects[i].name%>
+              </h2>
+              <p class="card-text">
+                <%=architectureProjects[i].description%>
+              </p>
             </div>
           </div>
-        </a>
-        <% } %>
+        </div>
+      </a>
+      <% } %>
     </div>
   </div>
 

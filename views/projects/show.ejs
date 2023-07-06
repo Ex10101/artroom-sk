@@ -2,6 +2,18 @@
 <html lang="en">
 
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-J6Q98G1DS5"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'G-J6Q98G1DS5');
+  </script>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,7 +37,7 @@
       "headline": "<%= project.name %>",
       "image": [
         "artroom-sk.up.railway.app/uploads/<%= project.images[0] %>"
-       ],
+      ],
       "description": "<%= project.description %>",
       "author": {
         "@type": "Organization",
@@ -40,7 +52,7 @@
         }
       }
     }
-    </script>
+  </script>
 </head>
 
 <body>
@@ -112,12 +124,12 @@
   </div>
 
   <% if (admin) { %>
-    <div class="admin-buttons">
-      <a href="/projects/<%= project._id %>/edit" class="edit-link">Edit project</a>
-      <form action="/projects/<%= project._id %>/delete" method="POST" class="delete-form">
-        <button type="submit" class="delete-button">Delete Project</button>
-      </form>
-    </div>
+  <div class="admin-buttons">
+    <a href="/projects/<%= project._id %>/edit" class="edit-link">Edit project</a>
+    <form action="/projects/<%= project._id %>/delete" method="POST" class="delete-form">
+      <button type="submit" class="delete-button">Delete Project</button>
+    </form>
+  </div>
   <% } %>
 
 

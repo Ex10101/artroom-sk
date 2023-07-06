@@ -2,6 +2,18 @@
 <html lang="sk">
 
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-J6Q98G1DS5"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'G-J6Q98G1DS5');
+  </script>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -75,15 +87,15 @@
           <div class="card">
             <img class="card-img" src="/uploads/<%=project.images[0]%>" alt="obrazok projektu">
             <div class="card-content">
-                <% if (project.skName) { %>
-                <h2 class="card-header">
-                  <%= project.skName %>
-                </h2>
-                <% } else { %>
-                <h2 class="card-header">
-                  <%= project.name %>
-                </h2>
-                <% } %>
+              <% if (project.skName) { %>
+              <h2 class="card-header">
+                <%= project.skName %>
+              </h2>
+              <% } else { %>
+              <h2 class="card-header">
+                <%= project.name %>
+              </h2>
+              <% } %>
               <p class="card-text">
                 <%=project.description%>
               </p>
@@ -104,14 +116,14 @@
             <img class="card-img" src="/uploads/<%=project.images[0]%>" alt="obrazok projektu">
             <div class="card-content">
               <% if (project.skName) { %>
-                <h2 class="card-header">
-                  <%= project.skName %>
-                </h2>
-                <% } else { %>
-                <h2 class="card-header">
-                  <%= project.name %>
-                </h2>
-                <% } %>
+              <h2 class="card-header">
+                <%= project.skName %>
+              </h2>
+              <% } else { %>
+              <h2 class="card-header">
+                <%= project.name %>
+              </h2>
+              <% } %>
               <p class="card-text">
                 <%=project.description%>
               </p>
@@ -132,14 +144,14 @@
             <img class="card-img" src="/uploads/<%=project.images[0]%>" alt="obrazok projektu">
             <div class="card-content">
               <% if (project.skName) { %>
-                <h2 class="card-header">
-                  <%= project.skName %>
-                </h2>
-                <% } else { %>
-                <h2 class="card-header">
-                  <%= project.name %>
-                </h2>
-                <% } %>
+              <h2 class="card-header">
+                <%= project.skName %>
+              </h2>
+              <% } else { %>
+              <h2 class="card-header">
+                <%= project.name %>
+              </h2>
+              <% } %>
               <p class="card-text">
                 <%=project.description%>
               </p>
