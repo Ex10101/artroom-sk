@@ -76,7 +76,7 @@
       <% project.images.forEach((image, index) => { %>
       <div class="img-container">
         <input type="checkbox" name="deleteImage<%= index %>" value="true">
-        <img src="/uploads/<%= image %>">
+        <img src="<%= image %>" crossorigin="anonymous" />
       </div>
       <% }) %>
     </div>

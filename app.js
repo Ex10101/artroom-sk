@@ -2,6 +2,14 @@ if (process.env.NODE_ENV !== "production") {
   require('dotenv').config();
 }
 
+const cloudinary = require('cloudinary').v2;
+
+cloudinary.config({ 
+  cloud_name: process.env.CLOUDINARY_CLOUD_NAME, 
+  api_key: process.env.CLOUDINARY_API_KEY, 
+  api_secret: process.env.CLOUDINARY_API_SECRET
+});
+
 const express = require('express');
 const app = express();
 
@@ -49,7 +57,22 @@ app.use(session({
   saveUninitialized: true,
 }));
 
-app.use(helmet());
+app.use(
+  helmet({
+    contentSecurityPolicy: {
+      directives: {
+        imgSrc: ["'self'", "https://res.cloudinary.com"],
+        scriptSrc: [
+          "'self'",
+          "https://ajax.googleapis.com",
+          "https://cdn.lightbox.com",
+          "https://cdn.jsdelivr.net/npm/cloudinary-core@2.x.x/dist/cloudinary-core.min.js",
+        ],
+        crossOriginResourcePolicy: ["cross-origin"],
+      },
+    },
+  })
+);
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
 app.use(express.static('public'));

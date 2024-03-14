@@ -1,6 +1,7 @@
 const Project = require('../../models/project');
 const path = require('path');
 const fs = require('fs');
+const cloudinary = require('cloudinary').v2;
 
 module.exports = async function deleteProjects(req, res, next) {
     try {
@@ -10,14 +11,10 @@ module.exports = async function deleteProjects(req, res, next) {
             return;
         }
 
-        deletedProject.images.forEach((filename) => {
-            const imagePath = path.join(__dirname, '..', 'uploads', filename);
-            fs.unlink(imagePath, (err) => {
-                if (err) {
-                    console.error(err);
-                }
-            });
-        });
+        await Promise.all(deletedProject.images.map(async (url) => {
+            const publicId = url.split('/').pop().split('.')[0];
+            await cloudinary.uploader.destroy(publicId);
+        }));
 
         res.redirect('/projects');
     } catch (err) {
