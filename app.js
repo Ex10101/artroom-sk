@@ -70,6 +70,7 @@ app.use(
           "https://cdn.jsdelivr.net/npm/cloudinary-core@2.x.x/dist/cloudinary-core.min.js",
         ],
         crossOriginEmbedderPolicy: false,
+        crossOriginResourcePolicy: false,
       },
     },
   })
