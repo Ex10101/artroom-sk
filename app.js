@@ -65,10 +65,12 @@ app.use(
         "img-src": ["'self'", "res.cloudinary.com"],
         "script-src": [
           "'self'",
+          "'unsafe-inline'",
           "https://ajax.googleapis.com",
           "https://cdn.lightbox.com",
-          "https://cdn.jsdelivr.net/npm/cloudinary-core@2.x.x/dist/cloudinary-core.min.js",
+          "https://cdn.jsdelivr.net/npm/cloudinary-core@2.x.x/dist/cloudinary-core.min.js"
         ],
+        crossOriginResourcePolicy: ["cross-origin"],
       },
     },
   })
