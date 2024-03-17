@@ -59,19 +59,18 @@ app.use(session({
 
 app.use(
   helmet({
+    crossOriginEmbedderPolicy: false,
     contentSecurityPolicy: {
       directives: {
         ...helmet.contentSecurityPolicy.getDefaultDirectives(),
-        "img-src": ["'self'", "res.cloudinary.com"],
+        "img-src": ["'self'", "res.cloudinary.com", "data:"],
         "script-src": [
           "'self'",
-          "data:",
           "'unsafe-inline'",
           "https://ajax.googleapis.com",
           "https://cdn.lightbox.com",
           "https://cdn.jsdelivr.net/npm/cloudinary-core@2.x.x/dist/cloudinary-core.min.js"
         ],
-        crossOriginResourcePolicy: ["cross-origin"],
       },
     },
   })
