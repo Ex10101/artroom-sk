@@ -61,8 +61,8 @@ app.use(
   helmet({
     contentSecurityPolicy: {
       directives: {
-        imgSrc: ["'self'", "https://res.cloudinary.com"],
-        scriptSrc: [
+        img-src: ["'self'", "https://res.cloudinary.com"],
+        script-src: [
           "'self'",
           "https://ajax.googleapis.com",
           "https://cdn.lightbox.com",
