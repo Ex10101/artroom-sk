@@ -62,7 +62,7 @@ app.use(
     contentSecurityPolicy: {
       directives: {
         ...helmet.contentSecurityPolicy.getDefaultDirectives(),
-        "img-src": ["'self'", "https://res.cloudinary.com"],
+        "img-src": ["'self'", "res.cloudinary.com"],
         "script-src": [
           "'self'",
           "https://ajax.googleapis.com",
