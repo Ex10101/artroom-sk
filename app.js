@@ -57,24 +57,24 @@ app.use(session({
   saveUninitialized: true,
 }));
 
-app.use(
-  helmet({
-    contentSecurityPolicy: {
-      directives: {
-        ...helmet.contentSecurityPolicy.getDefaultDirectives(),
-        "img-src": ["'self'", "https://res.cloudinary.com"],
-        "script-src": [
-          "'self'",
-          "https://ajax.googleapis.com",
-          "https://cdn.lightbox.com",
-          "https://cdn.jsdelivr.net/npm/cloudinary-core@2.x.x/dist/cloudinary-core.min.js",
-        ],
-        crossOriginEmbedderPolicy: false,
-        crossOriginResourcePolicy: false,
-      },
-    },
-  })
-);
+// app.use(
+//   helmet({
+//     contentSecurityPolicy: {
+//       directives: {
+//         ...helmet.contentSecurityPolicy.getDefaultDirectives(),
+//         "img-src": ["'self'", "https://res.cloudinary.com"],
+//         "script-src": [
+//           "'self'",
+//           "https://ajax.googleapis.com",
+//           "https://cdn.lightbox.com",
+//           "https://cdn.jsdelivr.net/npm/cloudinary-core@2.x.x/dist/cloudinary-core.min.js",
+//         ],
+//         crossOriginEmbedderPolicy: false,
+//         crossOriginResourcePolicy: false,
+//       },
+//     },
+//   })
+// );
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
 app.use(express.static('public'));
