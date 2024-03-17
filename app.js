@@ -72,6 +72,7 @@ app.use(
           "https://cdn.jsdelivr.net/npm/cloudinary-core@2.x.x/dist/cloudinary-core.min.js",
           "https://www.googletagmanager.com"
         ],
+        connectSrc: ["'self'", 'https://region1.google-analytics.com']
       },
     },
   })
