@@ -65,6 +65,7 @@ app.use(
         "img-src": ["'self'", "res.cloudinary.com"],
         "script-src": [
           "'self'",
+          "data:",
           "'unsafe-inline'",
           "https://ajax.googleapis.com",
           "https://cdn.lightbox.com",
