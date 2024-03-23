@@ -24,12 +24,9 @@ header {
     z-index: 2;
 }
 
-#logo {
-    margin-top: 10px;
-}
-
 #logo img {
     height: 31px;
+    margin-top: 10px;
 }
 
 #hamburger {
