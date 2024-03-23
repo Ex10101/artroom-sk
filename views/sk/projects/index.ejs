@@ -81,51 +81,17 @@
 
   <div class="section" data-type="design">
     <div class="grid">
-      <% for (let project of designProjects) { %>
-      <a href="/sk/projects/<%=project._id%>" class="hidden">
+      <% for (let i = designProjects.length-1; i >= 0; i--) { %>
+      <a href="/projects/<%=designProjects[i]._id%>" class="hidden">
         <div class="grid-item">
           <div class="card">
-            <img class="card-img" src="<%=project.images[0]%>" alt="obrazok projektu" crossorigin="anonymous">
+            <img class="card-img" src="<%=designProjects[i].images[0]%>" alt="project image" crossorigin="anonymous">
             <div class="card-content">
-              <% if (project.skName) { %>
               <h2 class="card-header">
-                <%= project.skName %>
+                <%=designProjects[i].name%>
               </h2>
-              <% } else { %>
-              <h2 class="card-header">
-                <%= project.name %>
-              </h2>
-              <% } %>
               <p class="card-text">
-                <%=project.description%>
-              </p>
-            </div>
-          </div>
-        </div>
-      </a>
-      <% } %>
-    </div>
-  </div>
-
-  <div class="section" data-type="architecture">
-    <div class="grid">
-      <% for (let project of architectureProjects) { %>
-      <a href="/sk/projects/<%=project._id%>" class="hidden">
-        <div class="grid-item">
-          <div class="card">
-            <img class="card-img" src="<%=project.images[0]%>" alt="obrazok projektu" crossorigin="anonymous">
-            <div class="card-content">
-              <% if (project.skName) { %>
-              <h2 class="card-header">
-                <%= project.skName %>
-              </h2>
-              <% } else { %>
-              <h2 class="card-header">
-                <%= project.name %>
-              </h2>
-              <% } %>
-              <p class="card-text">
-                <%=project.description%>
+                <%=designProjects[i].description%>
               </p>
             </div>
           </div>
@@ -137,23 +103,39 @@
 
   <div class="section" data-type="visualisation">
     <div class="grid">
-      <% for (let project of visualisationProjects) { %>
-      <a href="/sk/projects/<%=project._id%>" class="hidden">
+      <% for (let i = visualisationProjects.length-1; i >= 0 ; i--) { %>
+      <a href="/projects/<%=visualisationProjects[i]._id%>" class="hidden">
         <div class="grid-item">
           <div class="card">
-            <img class="card-img" src="<%=project.images[0]%>" alt="obrazok projektu" crossorigin="anonymous">
+            <img class="card-img" src="<%=visualisationProjects[i].images[0]%>" alt="project image" crossorigin="anonymous">
             <div class="card-content">
-              <% if (project.skName) { %>
               <h2 class="card-header">
-                <%= project.skName %>
+                <%=visualisationProjects[i].name%>
               </h2>
-              <% } else { %>
-              <h2 class="card-header">
-                <%= project.name %>
-              </h2>
-              <% } %>
               <p class="card-text">
-                <%=project.description%>
+                <%=visualisationProjects[i].description%>
+              </p>
+            </div>
+          </div>
+        </div>
+      </a>
+      <% } %>
+    </div>
+  </div>
+
+  <div class="section" data-type="architecture">
+    <div class="grid">
+      <% for (let i = architectureProjects.length-1; i >= 0; i--) { %>
+      <a href="/projects/<%=architectureProjects[i]._id%>" class="hidden">
+        <div class="grid-item">
+          <div class="card">
+            <img class="card-img" src="<%=architectureProjects[i].images[0]%>" alt="project image" crossorigin="anonymous">
+            <div class="card-content">
+              <h2 class="card-header">
+                <%=architectureProjects[i].name%>
+              </h2>
+              <p class="card-text">
+                <%=architectureProjects[i].description%>
               </p>
             </div>
           </div>
