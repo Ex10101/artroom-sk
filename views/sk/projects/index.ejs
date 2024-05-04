@@ -82,7 +82,7 @@
   <div class="section" data-type="design">
     <div class="grid">
       <% for (let i = designProjects.length-1; i >= 0; i--) { %>
-      <a href="/projects/<%=designProjects[i]._id%>" class="hidden">
+      <a href="/projects/<%=designProjects[i]._id%>" class="project-card hidden">
         <div class="grid-item">
           <div class="card">
             <img class="card-img" src="<%=designProjects[i].images[0]%>" alt="project image" crossorigin="anonymous">
@@ -90,9 +90,6 @@
               <h2 class="card-header">
                 <%=designProjects[i].name%>
               </h2>
-              <p class="card-text">
-                <%=designProjects[i].description%>
-              </p>
             </div>
           </div>
         </div>
@@ -104,7 +101,7 @@
   <div class="section" data-type="visualisation">
     <div class="grid">
       <% for (let i = visualisationProjects.length-1; i >= 0 ; i--) { %>
-      <a href="/projects/<%=visualisationProjects[i]._id%>" class="hidden">
+      <a href="/projects/<%=visualisationProjects[i]._id%>" class="project-card hidden">
         <div class="grid-item">
           <div class="card">
             <img class="card-img" src="<%=visualisationProjects[i].images[0]%>" alt="project image" crossorigin="anonymous">
@@ -112,9 +109,6 @@
               <h2 class="card-header">
                 <%=visualisationProjects[i].name%>
               </h2>
-              <p class="card-text">
-                <%=visualisationProjects[i].description%>
-              </p>
             </div>
           </div>
         </div>
@@ -126,7 +120,7 @@
   <div class="section" data-type="architecture">
     <div class="grid">
       <% for (let i = architectureProjects.length-1; i >= 0; i--) { %>
-      <a href="/projects/<%=architectureProjects[i]._id%>" class="hidden">
+      <a href="/projects/<%=architectureProjects[i]._id%>" class="project-card hidden">
         <div class="grid-item">
           <div class="card">
             <img class="card-img" src="<%=architectureProjects[i].images[0]%>" alt="project image" crossorigin="anonymous">
@@ -134,9 +128,6 @@
               <h2 class="card-header">
                 <%=architectureProjects[i].name%>
               </h2>
-              <p class="card-text">
-                <%=architectureProjects[i].description%>
-              </p>
             </div>
           </div>
         </div>
